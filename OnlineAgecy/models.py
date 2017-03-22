@@ -19,7 +19,7 @@ class Client(models.Model):
     Payment_info = models.CharField(max_length=255)
     def __str__(self):
         return self.id
-# Блок характеризируюцих таблиц
+
 
 class Staff(models.Model):
     id = models.AutoField(primary_key=True)

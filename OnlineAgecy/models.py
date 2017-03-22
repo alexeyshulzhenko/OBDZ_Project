@@ -1,9 +1,5 @@
-from django.db import models
-
 # Create your models here.
 from django.db import models
-
-# Create your models here.
 
 # Client block
 
@@ -12,13 +8,13 @@ class Client(models.Model):
     Name = models.CharField(max_length=40)
     Registration_adress =models.CharField(max_length=200)
     Office_adress = models.CharField(max_length=200)
-    Phone = models.CharField(max_length=14)
+    Phone = models.CharField(max_length=24)
     Personal_Discount = models.IntegerField()
     Software = models.CharField(max_length=40)
     Mail = models.CharField(max_length=40)
     Payment_info = models.CharField(max_length=255)
     def __str__(self):
-        return self.id
+        return self.Name
 
 
 class Staff(models.Model):
@@ -27,7 +23,7 @@ class Staff(models.Model):
     Birth_date = models.DateField(max_length=100)
     Position = models.CharField(max_length=40)
     def __str__(self):
-        return self.Category
+        return self.Name
 
 
 class Brief(models.Model):
@@ -39,16 +35,6 @@ class Brief(models.Model):
     def __str__(self):
         return self.Subcategory
 
-class Contract(models.Model):
-    id = models.AutoField(primary_key=True)
-    Date = models.DateField(max_length=100)
-    Start_date = models.DateField( max_length=100)
-    End_date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Staff)
-    Brief_id = models.ForeignKey(Brief)
-    Client_id = models.ForeignKey(Client)
-    def __str__(self):
-        return self.id
 
 class Act(models.Model):
     id = models.AutoField(primary_key=True)
@@ -71,7 +57,7 @@ class Contractor(models.Model):
     Name = models.CharField(max_length=40)
     Payment_info = models.CharField(max_length=255)
     def __str__(self):
-        return self.ClipId
+        return self.Name
 
 class Service(models.Model):
     id = models.AutoField(primary_key=True)
@@ -80,4 +66,16 @@ class Service(models.Model):
     Price_per_item = models.IntegerField()
     Count_item = models.IntegerField()
     def __str__(self):
-        return self.Channel
+        return self.Name
+
+class Contract(models.Model):
+    id = models.AutoField(primary_key=True)
+    Date = models.DateField(max_length=100)
+    Start_date = models.DateField( max_length=100)
+    End_date = models.DateField(max_length=100)
+    Manager_id = models.ForeignKey(Staff)
+    Brief_id = models.ForeignKey(Brief)
+    Client_id = models.ForeignKey(Client)
+    Services = models.ManyToManyField(Service)
+    def __str__(self):
+        return self.id

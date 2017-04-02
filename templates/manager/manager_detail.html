@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+     <div class="Name">
+         {{manager.Name}}
+     </div>
+     <h1>{{manager.Payment_info}}</h1>
+     <p>{{manager.Mail}} </p>
+     <p>{{manager.Phone}} </p>
+     <a class="btn btn-default" href="{% url 'manager_edit' id=manager.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+

@@ -22,3 +22,15 @@ class ContractForm(forms.ModelForm):
     class Meta:
         model = Contract
         fields = ('Date', 'Start_date', 'End_date', 'Manager_id', 'Brief_id', 'Client_id', 'Services')
+
+class ManagerForm(forms.ModelForm):
+
+    class Meta:
+        model = Manager
+        fields = ('Name', 'Birthday_date')
+
+class BriefForm(forms.ModelForm):
+
+    class Meta:
+        model = Brief
+        fields = ('Date', 'Start_date', 'End_date', 'Client_id')

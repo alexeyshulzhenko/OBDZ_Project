@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+     <div class="Name">
+         Contract No: {{contract.id}}
+     </div>
+     <h1>{{contract.Start_date}}</h1>
+     <p>{{contract.Mail}} </p>
+     <p>{{contract.Phone}} </p>
+     <a class="btn btn-default" href="{% url 'client_edit' id=contract.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+

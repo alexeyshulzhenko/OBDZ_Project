@@ -17,11 +17,11 @@ class Client(models.Model):
         return self.Name
 
 
-class Staff(models.Model):
+class Manager(models.Model):
     id = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=40)
-    Birth_date = models.DateField(max_length=100)
-    Position = models.CharField(max_length=40)
+    Birthday_date = models.DateField(max_length=100)
+    Position = models.CharField(max_length=40, default='Intern')
     def __str__(self):
         return self.Name
 
@@ -40,7 +40,7 @@ class Act(models.Model):
     id = models.AutoField(primary_key=True)
     Client_id = models.ForeignKey(Client)
     Date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Staff)
+    Manager_id = models.ForeignKey(Manager)
     def __str__(self):
         return self.Product
 
@@ -48,7 +48,7 @@ class Bill(models.Model):
     id = models.AutoField(primary_key=True)
     Act_id = models.ForeignKey(Act)
     Date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Staff)
+    Manager_id = models.ForeignKey(Manager)
     def __str__(self):
         return self.Product
 
@@ -73,9 +73,10 @@ class Contract(models.Model):
     Date = models.DateField(max_length=100)
     Start_date = models.DateField( max_length=100)
     End_date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Staff)
+    Manager_id = models.ForeignKey(Manager)
     Brief_id = models.ForeignKey(Brief)
     Client_id = models.ForeignKey(Client)
     Services = models.ManyToManyField(Service)
     def __str__(self):
         return self.id
+

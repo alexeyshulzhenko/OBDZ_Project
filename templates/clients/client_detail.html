@@ -7,4 +7,6 @@
      <h1>{{client.Payment_info}}</h1>
      <p>{{client.Mail}} </p>
      <p>{{client.Phone}} </p>
+     <a class="btn btn-default" href="{% url 'client_edit' id=client.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endblock %}
+

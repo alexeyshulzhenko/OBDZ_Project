@@ -8,5 +8,13 @@ class ClientsSource(resources.ModelResource):
         model = Client
 
 @admin.register(Client)
-class SCUModelAdmin(ImportExportModelAdmin):
+class ClientModelAdmin(ImportExportModelAdmin):
     resource_class = ClientsSource
+
+class ContractsSource(resources.ModelResource):
+    class Meta:
+        model = Client
+
+@admin.register(Contract)
+class ContractModelAdmin(ImportExportModelAdmin):
+    resource_class = ContractsSource

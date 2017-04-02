@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} All contracts {% endblock %}
+
+{% block content %}
+    <h1> All contracts </h1><a href="{% url 'contract_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    {% for Client in clients %}
+        <h2>{{Client.Name}} </h2>
+
+    {% endfor %}
+{% endblock %}

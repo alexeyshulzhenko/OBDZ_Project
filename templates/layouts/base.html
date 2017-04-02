@@ -9,7 +9,7 @@
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	    <title>Auth Demo</title>
+	    <title>Online Agency</title>
 
 	    <!-- Core CSS - Include with every page -->
 	    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,7 +26,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Rocky Balbo</a>
+	      <a class="navbar-brand" href="#">Online Agency</a>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,15 +50,15 @@
 	  </div>
 	</nav>
 
-	            {% block content %}
-	            {% endblock %}
+    {% block content %}
+    {% endblock %}
 
-	    <!-- Core Scripts - Include with every page -->
-	    <script src = "{% static 'js/jquery.min.js' %}"></script>
+    <!-- Core Scripts - Include with every page -->
+    <script src = "{% static 'js/jquery.min.js' %}"></script>
 
-	    <script src = "{% static 'js/bootstrap.min.js' %}"></script>
-	    {% block javascript %}
-	    {% endblock %}
+    <script src = "{% static 'js/bootstrap.min.js' %}"></script>
+    {% block javascript %}
+    {% endblock %}
 
 	</body>
 

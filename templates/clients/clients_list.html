@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} Clients list {% endblock %}
+
+{% block content %}
+    <h1> Clients list </h1><a href="{% url 'client_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+
+    {% for Client in clients %}
+         <div class="client">
+             <div class="Name">
+                {{Client.Name}}
+             </div>
+             <h1><a href="{% url 'client_detail' id=Client.id %}">{{ Client.Payment_info }}</a></h1>
+             <p>{{Client.Mail}} </p>
+             <p>{{Client.Phone}} </p>
+        </div>
+
+
+    {% endfor %}
+{% endblock %}

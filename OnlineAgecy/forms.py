@@ -9,6 +9,14 @@ class LoginForm(AuthenticationForm):
     password = forms.CharField(label="Password", max_length=30,
                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'name': 'password'}))
 
+class ServiceForm(forms.ModelForm):
+
+    class Meta:
+        model = Service
+        fields = ('Name', 'Contractor_id', 'Price_per_item', 'Count_item')
+
+
+
 
 class ClientForm(forms.ModelForm):
 
@@ -34,3 +42,5 @@ class BriefForm(forms.ModelForm):
     class Meta:
         model = Brief
         fields = ('Date', 'Start_date', 'End_date', 'Client_id')
+
+

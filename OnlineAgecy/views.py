@@ -1,6 +1,7 @@
 #!python
 #OnlineAgesy/views.py
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .forms import *
 
@@ -35,7 +36,7 @@ def client_new(request):
         if form.is_valid():
             client = form.save(commit=False)
             client.save()
-            return redirect('new_client', id=client.id)
+            return redirect('clients')
     else:
         form = ClientForm()
     return render(request, 'clients/new_client.html', {'form': form})
@@ -46,6 +47,7 @@ def client_detail(request, id):
     client = get_object_or_404(Client, id=id)
     return render(request, 'clients/client_detail.html', {'client': client})
 
+@login_required(login_url="login/")
 def client_edit(request, id):
     client = get_object_or_404(Client, id=id)
     if request.method == "POST":
@@ -53,7 +55,7 @@ def client_edit(request, id):
         if form.is_valid():
             client = form.save(commit=False)
             client.save()
-            return redirect('client_detail', id=client.id)
+            return redirect('clients')
     else:
         form = ClientForm(instance=client)
     return render(request, 'clients/new_client.html', {'form': form})
@@ -86,6 +88,7 @@ def contract_detail(request, id):
     contract = get_object_or_404(Contract, id=id)
     return render(request, 'contracts/contract_detail.html', {'contract': contract})
 
+@login_required(login_url="login/")
 def contract_edit(request, id):
     contract = get_object_or_404(Contract, id=id)
     if request.method == "POST":
@@ -106,7 +109,7 @@ def managers(request):
 	# get the blog clients that are published
 	contracts = Contract.objects.all()
 	# now return the rendered template
-	return render(request, "contracts/contracts_list.html", {'contracts': contracts})
+	return render(request, "manager/manager_list.html", {'contracts': contracts})
 
 
 @login_required(login_url="login/")
@@ -116,17 +119,18 @@ def manager_new(request):
         if form.is_valid():
             manager = form.save(commit=False)
             manager.save()
-            return redirect('new_manager', id=manager.id)
+            return redirect('manager')
     else:
         form = ManagerForm()
-    return render(request, 'managers/new_manager.html', {'form': form})
+    return render(request, 'manager/new_manager.html', {'form': form})
 
 
 @login_required(login_url="login/")
 def manager_detail(request, id):
     manager = get_object_or_404(Contract, id=id)
-    return render(request, 'managers/manager_detail.html', {'manager': manager})
+    return render(request, 'manager/manager_detail.html', {'manager': manager})
 
+@login_required(login_url="login/")
 def manager_edit(request, id):
     manager = get_object_or_404(Manager, id=id)
     if request.method == "POST":
@@ -134,7 +138,7 @@ def manager_edit(request, id):
         if form.is_valid():
             manager = form.save(commit=False)
             manager.save()
-            return redirect('manager_detail', id=manager.id)
+            return redirect('manager')
     else:
         form = ManagerForm(instance=manager)
     return render(request, 'manager/new_manager.html', {'form': form})
@@ -156,10 +160,10 @@ def brief_new(request):
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('new_brief', id=brief.id)
+            return redirect('briefs')
     else:
         form = BriefForm()
-    return render(request, 'brief/new_brief.html', {'form': form})
+    return render(request, 'briefs/new_brief.html', {'form': form})
 
 
 @login_required(login_url="login/")
@@ -167,6 +171,7 @@ def brief_detail(request, id):
     brief = get_object_or_404(Brief, id=id)
     return render(request, 'brief/brief_detail.html', {'brief': brief})
 
+@login_required(login_url="login/")
 def brief_edit(request, id):
     brief = get_object_or_404(Manager, id=id)
     if request.method == "POST":
@@ -174,7 +179,58 @@ def brief_edit(request, id):
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('manager_detail', id=brief.id)
+            return redirect('manager_detail')
     else:
         form = ManagerForm(instance=brief)
     return render(request, 'brief/new_brief.html', {'form': form})
+
+
+@login_required(login_url="login/")
+def all_clients_contracts(request, clientId):
+	# get the blog clients that are published
+	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + clientId)
+	# now return the rendered template
+	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
+
+
+
+#--------------------Services Views------------------------------#
+@login_required(login_url="login/")
+def services(request):
+    services = Service.objects.all()
+
+    return render(request, "services/services_list.html", {'services': services})
+
+
+@login_required(login_url="login/")
+def services_new(request):
+    if request.method == "POST":
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            services = form.save(commit=False)
+            services.save()
+            return redirect('services')
+    else:
+        form = ServiceForm()
+    return render(request, 'services/new_service.html', {'form': form})
+
+
+@login_required(login_url="login/")
+def service_detail(request, id):
+    service = get_object_or_404(Service, id=id)
+    return render(request, 'services/service_detail.html', {'service': service})
+
+@login_required(login_url="login/")
+def service_edit(request, id):
+    service = get_object_or_404(Service, id=id)
+    if request.method == "POST":
+        form = ServiceForm(request.POST, instance=service)
+        if form.is_valid():
+            service = form.save(commit=False)
+            service.save()
+            return redirect('services')
+    else:
+        form = ServiceForm(instance=service)
+    return render(request, 'services/new_service.html', {'form': form})
+
+

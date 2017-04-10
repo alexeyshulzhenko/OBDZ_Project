@@ -33,7 +33,7 @@ class Brief(models.Model):
     End_date = models.DateField(max_length=100)
     Client_id = models.ForeignKey(Client)
     def __str__(self):
-        return self.Subcategory
+        return str(self.id)
 
 
 class Act(models.Model):

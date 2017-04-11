@@ -79,4 +79,6 @@ class Contract(models.Model):
     Services = models.ManyToManyField(Service)
     def __str__(self):
         return self.id
+    def get_absolute_url(self):
+        return reverse("accept_bid", kwargs={"bid_id": self.id})
 

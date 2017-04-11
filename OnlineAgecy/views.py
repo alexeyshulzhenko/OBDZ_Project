@@ -1,7 +1,6 @@
 #!python
 #OnlineAgesy/views.py
 from django.shortcuts import render, redirect, get_object_or_404
-from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from .forms import *
 
@@ -47,7 +46,7 @@ def client_new(request):
         if form.is_valid():
             client = form.save(commit=False)
             client.save()
-            return redirect('clients')
+            return redirect('client_detail', id=id)
     else:
         form = ClientForm()
     return render(request, 'clients/new_client.html', {'form': form})
@@ -66,7 +65,7 @@ def client_edit(request, id):
         if form.is_valid():
             client = form.save(commit=False)
             client.save()
-            return redirect('clients')
+            return redirect('client_detail', id=id)
     else:
         form = ClientForm(instance=client)
     return render(request, 'clients/new_client.html', {'form': form})
@@ -93,7 +92,7 @@ def contract_new(request):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
-            return redirect('contracts')
+            return redirect('contract_detail', id=id)
     else:
         form = ContractForm()
     return render(request, 'contracts/new_contract.html', {'form': form})
@@ -112,7 +111,7 @@ def contract_edit(request, id):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
-            return redirect('contracts')
+            return redirect('contract_detail', id=id)
     else:
         form = ContractForm(instance=contract)
     return render(request, 'contracts/new_contract.html', {'form': form})
@@ -126,9 +125,9 @@ def contract_edit(request, id):
 @login_required(login_url="login/")
 def managers(request):
 	# get the blog clients that are published
-	manager = Manager.objects.all()
+	managers = Manager.objects.all()
 	# now return the rendered template
-	return render(request, "manager/manager_list.html", {'contracts': contracts})
+	return render(request, "manager/manager_list.html", {'managers': managers})
 
 
 @login_required(login_url="login/")
@@ -138,7 +137,7 @@ def manager_new(request):
         if form.is_valid():
             manager = form.save(commit=False)
             manager.save()
-            return redirect('manager')
+            return redirect('manager_detail', id=id)
     else:
         form = ManagerForm()
     return render(request, 'manager/new_manager.html', {'form': form})
@@ -157,7 +156,7 @@ def manager_edit(request, id):
         if form.is_valid():
             manager = form.save(commit=False)
             manager.save()
-            return redirect('manager')
+            return redirect('manager_detail', id=id)
     else:
         form = ManagerForm(instance=manager)
     return render(request, 'manager/new_manager.html', {'form': form})
@@ -182,7 +181,7 @@ def brief_new(request):
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('briefs')
+            return redirect('brief_detail', id=id)
     else:
         form = BriefForm()
     return render(request, 'briefs/new_brief.html', {'form': form})
@@ -191,7 +190,7 @@ def brief_new(request):
 @login_required(login_url="login/")
 def brief_detail(request, id):
     brief = get_object_or_404(Brief, id=id)
-    return render(request, 'brief/brief_detail.html', {'brief': brief})
+    return render(request, 'briefs/brief_detail.html', {'brief': brief})
 
 @login_required(login_url="login/")
 def brief_edit(request, id):
@@ -201,7 +200,7 @@ def brief_edit(request, id):
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('brief_detail')
+            return redirect('brief_detail', id=id)
     else:
         form = ManagerForm(instance=brief)
     return render(request, 'brief/new_brief.html', {'form': form})
@@ -226,7 +225,7 @@ def services_new(request):
         if form.is_valid():
             services = form.save(commit=False)
             services.save()
-            return redirect('services')
+            return redirect('service_detail', id=id)
     else:
         form = ServiceForm()
     return render(request, 'services/new_service.html', {'form': form})
@@ -245,7 +244,7 @@ def service_edit(request, id):
         if form.is_valid():
             service = form.save(commit=False)
             service.save()
-            return redirect('services')
+            return redirect('service_detail', id=id)
     else:
         form = ServiceForm(instance=service)
     return render(request, 'services/new_service.html', {'form': form})
@@ -270,7 +269,7 @@ def contractors_new(request):
         if form.is_valid():
             contractors = form.save(commit=False)
             contractors.save()
-            return redirect('contractors')
+            return redirect('contractor_detail', id=id)
     else:
         form = ContractorForm()
     return render(request, 'contractors/new_contractor.html', {'form': form})
@@ -289,7 +288,7 @@ def contractor_edit(request, id):
         if form.is_valid():
             contractor = form.save(commit=False)
             contractor.save()
-            return redirect('contractors')
+            return redirect('contractor_detail', id=id)
     else:
         form = ContractorForm(instance=contractor)
     return render(request, 'contractors/new_contractor.html', {'form': form})

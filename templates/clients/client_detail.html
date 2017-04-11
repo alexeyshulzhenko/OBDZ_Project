@@ -8,5 +8,6 @@
      <p>{{client.Mail}} </p>
      <p>{{client.Phone}} </p>
      <a class="btn btn-default" href="{% url 'client_edit' id=client.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+     <a class="btn btn-default" href="{% url 'all_clients_contracts' id=client.id %}">Clients contracts</a>
 {% endblock %}
 

@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} Services list {% endblock %}
+
+{% block content %}
+    <span><h1> services list </h1></span>
+        <table>
+            {% for Service in services %}
+                <tr>
+                    <td>Service.ClientName</td>
+                    <td>Service.ServiceName</td>
+                </tr>
+        </table>
+
+    {% endfor %}
+{% endblock %}

@@ -10,23 +10,6 @@ def home(request):
 
 
 
-@login_required(login_url="login/")
-def clients_contracts(request):
-	# get the clients that are published
-	contracts = Client.objects.raw('SELECT id, date,  FROM Contract WHERE id_client = "Client_id"')
-	# now return the rendered template
-	return render(request, "contracts/contracts_list.html", {'contracts': contracts})
-
-
-@login_required(login_url="login/")
-def all_clients_contracts(request, clientId):
-	# get the blog clients that are published
-	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + clientId)
-	# now return the rendered template
-	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
-
-
-
 #--------------------Clients Views------------------------------#
 #################################################################
 
@@ -69,6 +52,13 @@ def client_edit(request, id):
     else:
         form = ClientForm(instance=client)
     return render(request, 'clients/new_client.html', {'form': form})
+
+@login_required(login_url="login/")
+def all_clients_contracts(request, id):
+	# get the blog clients that are published
+	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + id)
+	# now return the rendered template
+	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
 
 
 
@@ -248,6 +238,15 @@ def service_edit(request, id):
     else:
         form = ServiceForm(instance=service)
     return render(request, 'services/new_service.html', {'form': form})
+
+@login_required(login_url="login/")
+def service_all_clients(request, id):
+	# get the blog clients that are published
+	services = Contract.objects.raw('SELECT OnlineAgecy_client.Name AS ClientName OnlineAgecy_service.Name AS ServiceName FROM (OnlineAgecy_contract INNER JOIN OnlineAgecy_client ON OnlineAgecy_contract.id = OnlineAgecy_client.id) INNER JOIN OnlineAgecy_service ON  OnlineAgecy_contract.id = OnlineAgecy_service.id')
+	# now return the rendered template
+	return render(request, "services/allClientServices.html", {'services': services})
+
+
 
 
 

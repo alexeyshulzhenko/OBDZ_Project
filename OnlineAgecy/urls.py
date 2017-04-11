@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^contracts/(?P<id>\d+)/$', views.contract_detail, name='contract_detail'),
     url(r'^contracts/new/$', views.contract_new, name='contract_new'),
     url(r'^contracts/(?P<id>\d+)/edit/$', views.contract_edit, name='contract_edit'),
-    url(r'^contracts/list/(?P<id>\d+)/$', views.contracts, name='all_clients_contracts'),
+    url(r'^contracts/list/(?P<id>\d+)/$', views.all_clients_contracts, name='all_clients_contracts'),
 
 
     url(r'^manager/$', views.managers, name='managers'),
@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^services/(?P<id>\d+)/$', views.service_detail, name='service_detail'),
     url(r'^services/new/$', views.services_new, name='services_new'),
     url(r'^services/(?P<id>\d+)/edit/$', views.service_edit, name='service_edit'),
+    url(r'^services/table/(?P<id>\d+)/$', views.service_all_clients, name='service_all_clients'),
 
     url(r'^contractors/$', views.contractors, name='contractors'),
     url(r'^contractors/(?P<id>\d+)/$', views.contractor_detail, name='contractor_detail'),

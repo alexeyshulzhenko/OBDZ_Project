@@ -1,5 +1,7 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
+from django.forms import CheckboxSelectMultiple
+
 from .models import *
 
 
@@ -26,10 +28,14 @@ class ClientForm(forms.ModelForm):
 
 
 class ContractForm(forms.ModelForm):
-
     class Meta:
         model = Contract
         fields = ('Date', 'Start_date', 'End_date', 'Manager_id', 'Brief_id', 'Client_id', 'Services')
+    def __init__(self, *args, **kwargs):
+        super(ContractForm, self).__init__(*args, **kwargs)
+
+        self.fields["Services"].widget = CheckboxSelectMultiple()
+        self.fields["Services"].queryset = Service.objects.all()
 
 class ManagerForm(forms.ModelForm):
 
@@ -43,4 +49,10 @@ class BriefForm(forms.ModelForm):
         model = Brief
         fields = ('Date', 'Start_date', 'End_date', 'Client_id')
 
+
+class ContractorForm(forms.ModelForm):
+
+    class Meta:
+        model = Contractor
+        fields = ('Name', 'Payment_info')
 

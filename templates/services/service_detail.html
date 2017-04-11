@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+     <div class="Name">
+         {{service.Name}}
+     </div>
+     <h1>{{service.Payment_info}}</h1>
+     <p>{{service.Mail}} </p>
+     <p>{{service.Phone}} </p>
+     <a class="btn btn-default" href="{% url 'service_edit' id=service.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+

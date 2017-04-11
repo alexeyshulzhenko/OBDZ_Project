@@ -19,7 +19,18 @@ def clients_contracts(request):
 	return render(request, "contracts/contracts_list.html", {'contracts': contracts})
 
 
+@login_required(login_url="login/")
+def all_clients_contracts(request, clientId):
+	# get the blog clients that are published
+	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + clientId)
+	# now return the rendered template
+	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
+
+
+
 #--------------------Clients Views------------------------------#
+#################################################################
+
 
 @login_required(login_url="login/")
 def clients(request):
@@ -60,7 +71,11 @@ def client_edit(request, id):
         form = ClientForm(instance=client)
     return render(request, 'clients/new_client.html', {'form': form})
 
+
+
 #--------------------Contracts Views------------------------------#
+###################################################################
+
 
 @login_required(login_url="login/")
 def contracts(request):
@@ -77,7 +92,7 @@ def contract_new(request):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
-            return redirect('new_contract', id=contract.id)
+            return redirect('contracts')
     else:
         form = ContractForm()
     return render(request, 'contracts/new_contract.html', {'form': form})
@@ -96,7 +111,7 @@ def contract_edit(request, id):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
-            return redirect('contract_detail', id=contract.id)
+            return redirect('contracts')
     else:
         form = ContractForm(instance=contract)
     return render(request, 'contracts/new_contract.html', {'form': form})
@@ -107,7 +122,7 @@ def contract_edit(request, id):
 @login_required(login_url="login/")
 def managers(request):
 	# get the blog clients that are published
-	contracts = Contract.objects.all()
+	manager = Manager.objects.all()
 	# now return the rendered template
 	return render(request, "manager/manager_list.html", {'contracts': contracts})
 
@@ -127,7 +142,7 @@ def manager_new(request):
 
 @login_required(login_url="login/")
 def manager_detail(request, id):
-    manager = get_object_or_404(Contract, id=id)
+    manager = get_object_or_404(Manager, id=id)
     return render(request, 'manager/manager_detail.html', {'manager': manager})
 
 @login_required(login_url="login/")
@@ -143,7 +158,10 @@ def manager_edit(request, id):
         form = ManagerForm(instance=manager)
     return render(request, 'manager/new_manager.html', {'form': form})
 
+
+
 #--------------------Brief Views------------------------------#
+###############################################################
 
 @login_required(login_url="login/")
 def brief(request):
@@ -173,28 +191,23 @@ def brief_detail(request, id):
 
 @login_required(login_url="login/")
 def brief_edit(request, id):
-    brief = get_object_or_404(Manager, id=id)
+    brief = get_object_or_404(Brief, id=id)
     if request.method == "POST":
         form = BriefForm(request.POST, instance=brief)
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('manager_detail')
+            return redirect('brief_detail')
     else:
         form = ManagerForm(instance=brief)
     return render(request, 'brief/new_brief.html', {'form': form})
 
 
-@login_required(login_url="login/")
-def all_clients_contracts(request, clientId):
-	# get the blog clients that are published
-	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + clientId)
-	# now return the rendered template
-	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
-
 
 
 #--------------------Services Views------------------------------#
+##################################################################
+
 @login_required(login_url="login/")
 def services(request):
     services = Service.objects.all()
@@ -232,5 +245,49 @@ def service_edit(request, id):
     else:
         form = ServiceForm(instance=service)
     return render(request, 'services/new_service.html', {'form': form})
+
+
+
+#--------------------contractors Views------------------------------#
+#####################################################################
+
+
+@login_required(login_url="login/")
+def contractors(request):
+    contractors = Contractor.objects.all()
+
+    return render(request, "contractors/contractors_list.html", {'contractors': contractors})
+
+
+@login_required(login_url="login/")
+def contractors_new(request):
+    if request.method == "POST":
+        form = ContractorForm(request.POST)
+        if form.is_valid():
+            contractors = form.save(commit=False)
+            contractors.save()
+            return redirect('contractors')
+    else:
+        form = ContractorForm()
+    return render(request, 'contractors/new_contractor.html', {'form': form})
+
+
+@login_required(login_url="login/")
+def contractor_detail(request, id):
+    contractor = get_object_or_404(Contractor, id=id)
+    return render(request, 'contractors/contractor_detail.html', {'contractor': contractor})
+
+@login_required(login_url="login/")
+def contractor_edit(request, id):
+    contractor = get_object_or_404(Contractor, id=id)
+    if request.method == "POST":
+        form = ContractorForm(request.POST, instance=contractor)
+        if form.is_valid():
+            contractor = form.save(commit=False)
+            contractor.save()
+            return redirect('contractors')
+    else:
+        form = ContractorForm(instance=contractor)
+    return render(request, 'contractors/new_contractor.html', {'form': form})
 
 

@@ -7,6 +7,8 @@
     <h1> All contracts </h1><a href="{% url 'contract_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
     {% for contract in contracts %}
         <h2>Contract No:{{contract.id}} </h2>
-
+        <p>Client: {{contract.Client_id}}</p><br>
+        <p>Made by Brief No: {{contract.Brief_id}}</p>
+        <p>For services: {{contract.Brief_id}}</p>
     {% endfor %}
 {% endblock %}

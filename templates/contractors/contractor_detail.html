@@ -1,0 +1,12 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+     <div class="Name">
+         {{contractor.Name}}
+     </div>
+     <h1>{{contractor.Payment_info}}</h1>
+     <p>{{contractor.Mail}} </p>
+     <p>{{contractor.Phone}} </p>
+     <a class="btn btn-default" href="{% url 'contractor_edit' id=contractor.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+

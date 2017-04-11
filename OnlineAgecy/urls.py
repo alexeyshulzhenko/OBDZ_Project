@@ -34,4 +34,9 @@ urlpatterns = [
     url(r'^services/(?P<id>\d+)/$', views.service_detail, name='service_detail'),
     url(r'^services/new/$', views.services_new, name='services_new'),
     url(r'^services/(?P<id>\d+)/edit/$', views.service_edit, name='service_edit'),
+
+    url(r'^contractors/$', views.contractors, name='contractors'),
+    url(r'^contractors/(?P<id>\d+)/$', views.contractor_detail, name='contractor_detail'),
+    url(r'^contractors/new/$', views.contractors_new, name='contractors_new'),
+    url(r'^contractors/(?P<id>\d+)/edit/$', views.contractor_edit, name='contractor_edit'),
 ]

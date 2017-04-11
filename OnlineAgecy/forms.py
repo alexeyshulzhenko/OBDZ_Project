@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import AuthenticationForm
 from django import forms
-from django.forms import CheckboxSelectMultiple
+from django.forms import CheckboxSelectMultiple, SelectDateWidget
 
 from .models import *
 
@@ -36,18 +36,33 @@ class ContractForm(forms.ModelForm):
 
         self.fields["Services"].widget = CheckboxSelectMultiple()
         self.fields["Services"].queryset = Service.objects.all()
+        self.fields["Date"].widget = SelectDateWidget()
+        self.fields["Start_date"].widget = SelectDateWidget()
+        self.fields["End_date"].widget = SelectDateWidget()
+
 
 class ManagerForm(forms.ModelForm):
 
     class Meta:
         model = Manager
         fields = ('Name', 'Birthday_date')
+    def __init__(self, *args, **kwargs):
+        super(ManagerForm, self).__init__(*args, **kwargs)
+
+        self.fields["Birthday_date"].widget = SelectDateWidget()
+
 
 class BriefForm(forms.ModelForm):
 
     class Meta:
         model = Brief
         fields = ('Date', 'Start_date', 'End_date', 'Client_id')
+    def __init__(self, *args, **kwargs):
+        super(BriefForm, self).__init__(*args, **kwargs)
+
+        self.fields["Date"].widget = SelectDateWidget()
+        self.fields["Start_date"].widget = SelectDateWidget()
+        self.fields["End_date"].widget = SelectDateWidget()
 
 
 class ContractorForm(forms.ModelForm):

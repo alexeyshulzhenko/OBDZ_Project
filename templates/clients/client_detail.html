@@ -1,13 +1,23 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-     <div class="Name">
-         {{client.Name}}
+     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+         <div class="Name">
+             <h2>{{client.Name}}</h2>
+         </div>
+
+         <p><i>Реквізити для оплати: </i> {{ client.Payment_info }}</p>
+         <h4>Контакти:</h4>
+         <p><i>Електронна пошта: </i>{{client.Mail}} </p>
+         <p><i>Телефон: </i>{{client.Phone}} </p>
+         <p><i>Адреса: </i>{{ client.Office_adress }}</p>
+         <h4>Супровідна інформація:</h4>
+         <p><i>Програмне забезпечення: </i>{{client.Software}} </p>
+         <p><i>Адресса реєстрації: </i>{{client.Registration_adress}}</p>
+         <a class="btn btn-default" href="{% url 'client_edit' id=client.id %}">
+             <span class="glyphicon glyphicon-pencil"></span>
+         </a>
+         <a class="btn btn-default" href="{% url 'all_clients_contracts' id=client.id %}">Переглянути договри</a>
      </div>
-     <h1>{{client.Payment_info}}</h1>
-     <p>{{client.Mail}} </p>
-     <p>{{client.Phone}} </p>
-     <a class="btn btn-default" href="{% url 'client_edit' id=client.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-     <a class="btn btn-default" href="{% url 'all_clients_contracts' id=client.id %}">Clients contracts</a>
 {% endblock %}
 

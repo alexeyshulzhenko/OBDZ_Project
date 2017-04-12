@@ -4,18 +4,18 @@
 {% block title %} briefs list {% endblock %}
 
 {% block content %}
-    <span><h1> briefs list </h1></span><span><a href="{% url 'brief_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <span><h1> briefs list </h1></span><span><a href="{% url 'brief_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
 
-    {% for brief in briefs %}
-         <div class="brief">
-             <div class="Name">
-                <h3><a href="{% url 'brief_detail' id=brief.id %}">Brief for {{brief.Client_id}}</a></h3>
-             </div>
-             <p>Укладено {{ brief.Date }}</p>
-             <p>Дата початку: {{brief.Start_date}} </p>
-             <p>Дата закінчення: {{brief.End_date}} </p>
-        </div>
-
-
-    {% endfor %}
+        {% for brief in briefs %}
+             <div class="brief">
+                 <div class="Name">
+                    <h3><a href="{% url 'brief_detail' id=brief.id %}">Brief for {{brief.Client_id}}</a></h3>
+                 </div>
+                 <p>Укладено {{ brief.Date }}</p>
+                 <p>Дата початку: {{brief.Start_date}} </p>
+                 <p>Дата закінчення: {{brief.End_date}} </p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

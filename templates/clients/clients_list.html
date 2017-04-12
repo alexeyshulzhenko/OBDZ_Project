@@ -4,18 +4,26 @@
 {% block title %} Clients list {% endblock %}
 
 {% block content %}
-    <span><h1> Clients list </h1></span><span><a href="{% url 'client_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
-
-    {% for Client in clients %}
-         <div class="client">
-             <div class="Name">
-                <h3><a href="{% url 'client_detail' id=Client.id %}">{{Client.Name}}</a></h3>
-             </div>
-             <p>{{ Client.Payment_info }}</p>
-             <p>{{Client.Mail}} </p>
-             <p>{{Client.Phone}} </p>
-        </div>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
 
 
-    {% endfor %}
+        <span><h1> Всі клієнти </h1></span>
+        <span>
+            <a href="{% url 'client_new' %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </span>
+        {% for Client in clients %}
+             <div class="client">
+                 <div class="Name">
+                    <h3><a href="{% url 'client_detail' id=Client.id %}">{{Client.Name}}</a></h3>
+                 </div>
+                 <p><i>Реквізити для оплати: </i> {{ Client.Payment_info }}</p>
+
+                 <p><i>Електронна пошта: </i>{{Client.Mail}} </p>
+
+                 <p><i>Телефон: </i>{{Client.Phone}} </p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

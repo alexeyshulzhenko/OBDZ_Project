@@ -4,21 +4,21 @@
 {% block title %} contractors list {% endblock %}
 
 {% block content %}
-    <span><h1> contractors list </h1></span>
-    <span>
-        <a href="{% url 'contractors_new' %}" class="top-menu">
-            <span class="glyphicon glyphicon-plus"></span>
-        </a>
-    </span>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <span><h1> contractors list </h1></span>
+        <span>
+            <a href="{% url 'contractors_new' %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </span>
 
-    {% for Contractor in contractors %}
-         <div class="contractor">
-             <div class="Name">
-                <h3><a href="{% url 'contractor_detail' id=Contractor.id %}"> {{ Contractor.Name}}</a></h3>
-             </div>
-             <p>Реквізити: {{Contractor.Payment_info}} </p>
-        </div>
-
-
-    {% endfor %}
+        {% for Contractor in contractors %}
+             <div class="contractor">
+                 <div class="Name">
+                    <h3><a href="{% url 'contractor_detail' id=Contractor.id %}"> {{ Contractor.Name}}</a></h3>
+                 </div>
+                 <p>Реквізити: {{Contractor.Payment_info}} </p>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

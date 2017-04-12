@@ -1,12 +1,16 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-     <div class="Name">
-         {{manager.Name}}
+     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+         <div class="Name">
+             <h3>{{manager.Name}}</h3>
+         </div>
+         <p>{{manager.Payment_info}}</p>
+         <p>{{manager.Mail}} </p>
+         <p>{{manager.Phone}} </p>
+         <a class="btn btn-default" href="{% url 'manager_edit' id=manager.id %}">
+             <span class="glyphicon glyphicon-pencil"></span>
+         </a>
      </div>
-     <h1>{{manager.Payment_info}}</h1>
-     <p>{{manager.Mail}} </p>
-     <p>{{manager.Phone}} </p>
-     <a class="btn btn-default" href="{% url 'manager_edit' id=manager.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endblock %}
 

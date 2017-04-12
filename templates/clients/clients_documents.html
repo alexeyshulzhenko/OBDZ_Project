@@ -1,15 +1,15 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-<h1> Clients documents</h1>
-      {% for Client in clients %}
-         <div class="client">
+<h1> Всі договори клієнта {{Item.Name}}</h1>
+      {% for Item in Items %}
+         <div class="Item">
              <div class="Name">
-                <h3><a href="{% url 'client_detail' id=Client.id %}">{{Client.Name}}</a></h3>
+                <h3><a href="{% url 'Item_detail' id=Item.id %}">{{Item.Name}}</a></h3>
              </div>
-             <p>{{ Client.Payment_info }}</p>
-             <p>{{Client.Mail}} </p>
-             <p>{{Client.Phone}} </p>
+             <p>{{ Item.Payment_info }}</p>
+             <p>{{Item.Mail}} </p>
+             <p>{{Item.Phone}} </p>
         </div>
 
 

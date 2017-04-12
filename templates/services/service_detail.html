@@ -1,12 +1,16 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-     <div class="Name">
-         {{service.Name}}
+     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+         <div class="Name">
+             <h3>{{service.Name}}</h3>
+         </div>
+         <p>{{service.Contractor_id}}</p>
+         <p>{{service. Price_per_item}} грн</p>
+         <p>{{service.Count_item}} </p>
+         <a class="btn btn-default" href="{% url 'service_edit' id=service.id %}">
+             <span class="glyphicon glyphicon-pencil"></span>
+         </a>
      </div>
-     <h1>{{service.Payment_info}}</h1>
-     <p>{{service.Mail}} </p>
-     <p>{{service.Phone}} </p>
-     <a class="btn btn-default" href="{% url 'service_edit' id=service.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endblock %}
 

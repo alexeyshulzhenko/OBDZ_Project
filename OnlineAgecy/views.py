@@ -41,6 +41,7 @@ def client_detail(request, id):
     client = get_object_or_404(Client, id=id)
     return render(request, 'clients/client_detail.html', {'client': client})
 
+
 @login_required(login_url="login/")
 def client_edit(request, id):
     client = get_object_or_404(Client, id=id)
@@ -57,15 +58,15 @@ def client_edit(request, id):
 @login_required(login_url="login/")
 def all_clients_contracts(request, id):
 	# get the blog clients that are published
-	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + id)
+	items = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + id)
 	# now return the rendered template
-	return render(request, "contracts/allUserContracts.html", {'contracts': contracts})
+	return render(request, "clients/allUserContracts.html", {'items': items}, {'client': id})
 
 @login_required(login_url="login/")
 def clients_documents(request, id):
-    client = Client.objects.raw('SELECT OnlineAgecy_client.id, OnlineAgecy_client.Name, OnlineAgecy_act.Client_id_id AS id  '
+    item = Client.objects.raw('SELECT OnlineAgecy_client.id, OnlineAgecy_client.Name AS Name, OnlineAgecy_act.Client_id_id AS id  '
                                 'from OnlineAgecy_client join OnlineAgecy_act using (id) WHERE OnlineAgecy_client.id =' + id)
-    return render(request, 'clients/clients_documents.html', {'client': client})
+    return render(request, 'clients/clients_documents.html', {'item': item})
 
 
 
@@ -361,3 +362,5 @@ def bills(request):
 def bills_detail(request, id):
     bill = get_object_or_404(Bill, id=id)
     return render(request, 'bills/bill_detail.html', {'bill': bill})
+
+

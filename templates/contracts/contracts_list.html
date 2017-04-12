@@ -4,11 +4,13 @@
 {% block title %} All contracts {% endblock %}
 
 {% block content %}
-    <h1> All contracts </h1><a href="{%  url 'contract_new'%}"> <span class="glyphicon glyphicon-plus"></a></span></a>
-    {% for contract in contracts %}
-        <h2><a href="{%  url 'contract_detail' contract.id %}"> Contract No:{{contract.id}}</a> </h2>
-        <p>Client: {{contract.Client_id}}</p><br>
-        <p>Made by Brief No: {{contract.Brief_id}}</p>
-        <p>For services: {{contract.Brief_id}}</p>
-    {% endfor %}
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <h1> All contracts </h1><a href="{%  url 'contract_new'%}"> <span class="glyphicon glyphicon-plus"></a></span></a>
+        {% for contract in contracts %}
+            <h2><a href="{%  url 'contract_detail' contract.id %}"> Contract No:{{contract.id}}</a> </h2>
+            <p>Client: {{contract.Client_id}}</p><br>
+            <p>Made by Brief No: {{contract.Brief_id}}</p>
+            <p>For services: {{contract.Brief_id}}</p>
+        {% endfor %}
+    </div>
 {% endblock %}

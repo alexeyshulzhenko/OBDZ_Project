@@ -1,12 +1,15 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
-     <div class="Name">
-         {{contractor.Name}}
+     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+         <div class="Name">
+             {{contractor.Name}}
+         </div>
+         <h1>{{contractor.Payment_info}}</h1>
+         <p>{{contractor.Mail}} </p>
+         <p>{{contractor.Phone}} </p>
+         <a class="btn btn-default" href="{% url 'contractor_edit' id=contractor.id %}">
+             <span class="glyphicon glyphicon-pencil"></span>
+         </a>
      </div>
-     <h1>{{contractor.Payment_info}}</h1>
-     <p>{{contractor.Mail}} </p>
-     <p>{{contractor.Phone}} </p>
-     <a class="btn btn-default" href="{% url 'contractor_edit' id=contractor.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 {% endblock %}
-

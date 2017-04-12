@@ -4,18 +4,27 @@
 {% block title %} Services list {% endblock %}
 
 {% block content %}
-    <span><h1> services list </h1></span><span><a href="{% url 'services_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <span>
+            <h1> services list </h1>
+        </span>
+        <span>
+            <a href="{% url 'services_new' %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </span>
 
-    {% for Service in services %}
-         <div class="service">
-             <div class="Name">
-                <h3><a href="{% url 'service_detail' id=Service.id %}">{{Service.Name}}</a></h3>
-             </div>
-             <p>{{ Service.Payment_info }}</p>
-             <p>{{Service.Mail}} </p>
-             <p>{{Service.Phone}} </p>
-        </div>
+        {% for Service in services %}
+             <div class="service">
+                 <div class="Name">
+                    <h3><a href="{% url 'service_detail' id=Service.id %}">{{Service.Name}}</a></h3>
+                 </div>
+                 <p>{{ Service.Payment_info }}</p>
+                 <p>{{Service.Contractor_id}} </p>
+                 <p>{{Service.Price_per_item}} </p>
+            </div>
 
 
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

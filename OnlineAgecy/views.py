@@ -76,6 +76,12 @@ def all_clients_bills(request, id):
                                'WHERE OnlineAgecy_client.id =' + id)
     return render(request, 'clients/clients_bills.html', {'items': items})
 
+def fresh_clients(request):
+    items = Client.objects.raw('SELECT id ,Name FROM OnlineAgecy_client WHERE NOT EXISTS(SELECT id '
+                                                                                         'FROM OnlineAgecy_service WHERE NOT EXISTS (SELECT contract_id, service_id '
+                                                                                                                                    'FROM OnlineAgecy_contract_Services WHERE OnlineAgecy_contract_Services.service_id = OnlineAgecy_service.id))')
+    return render(request, 'clients/blacklist.html', {'items': items})
+
 #--------------------Contracts Views------------------------------#
 ###################################################################
 
@@ -315,6 +321,11 @@ def contractor_edit(request, id):
         form = ContractorForm(instance=contractor)
     return render(request, 'layouts/form.html', {'form': form})
 
+def newest_contractors(request):
+    items = Contractor.objects.raw('SELECT id ,Name FROM OnlineAgecy_contractor WHERE id NOT in(SELECT id AS Serv_id FROM OnlineAgecy_service '
+                                   'WHERE NOT EXISTS (SELECT contract_id, service_id FROM OnlineAgecy_contract_Services '
+                                   'WHERE OnlineAgecy_contract_Services.service_id = OnlineAgecy_service.id))')
+    return render(request, 'contractors/new_contractors.html', {'items': items})
 
 
 #--------------------Act Views------------------------------#

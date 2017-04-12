@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %}  Нові клієнти {% endblock %}
+
+{% block content %}
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+
+
+        <span><h1> Нові клієнти </h1></span>
+        <span><h3> Клієнти, які ще не підписали з нами перший договір </h3></span>
+        {% for item in items %}
+             <div class="client">
+                 <div class="Name">
+                    <h3><a href="{% url 'client_detail' id=item.id %}">{{item.Name}}</a></h3>
+                 </div>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

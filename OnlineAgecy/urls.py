@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^clients/(?P<id>\d+)/edit/$', views.client_edit, name='client_edit'),
     url(r'^clients/sevices/$', views.clients_services_count, name='clients_services_count'),
     url(r'^clients/bills/(?P<id>\d+)/$', views.all_clients_bills, name='all_clients_bills'),
-
+    url(r'^clients/bills/$', views.fresh_clients, name='fresh_clients'),
 
 
     url(r'^contracts/$', views.contracts, name='contracts'),
@@ -44,6 +44,8 @@ urlpatterns = [
     url(r'^contractors/(?P<id>\d+)/$', views.contractor_detail, name='contractor_detail'),
     url(r'^contractors/new/$', views.contractors_new, name='contractors_new'),
     url(r'^contractors/(?P<id>\d+)/edit/$', views.contractor_edit, name='contractor_edit'),
+    url(r'^contractors/newest/$', views.newest_contractors, name='newest_contractors'),
+
 
     url(r'^acts/$', views.acts, name='acts'),
     url(r'^acts/(?P<id>\d+)/$', views.act_detail, name='act_detail'),

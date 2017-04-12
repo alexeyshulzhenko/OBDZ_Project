@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %}New items list {% endblock %}
+
+{% block content %}
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <span><h1>Підрядники без замовлень </h1></span>
+
+        {% for item in items %}
+             <div class="item">
+                 <div class="Name">
+                    <h3><a href="{% url 'contractor_detail' id=item.id %}"> {{ item.Name}}</a></h3>
+                 </div>
+                 <p>Реквізити: {{item.Payment_info}} </p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

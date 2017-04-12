@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+     <div class="Name">
+         {{act.Client_id}}
+     </div>
+     <h1>{{act.Date}}</h1>
+     <p>{{act.Manager_id}} </p>
+     <a class="btn btn-default" href="{% url 'act_edit' id=act.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endblock %}
+

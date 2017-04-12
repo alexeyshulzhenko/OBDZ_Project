@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} acts list {% endblock %}
+
+{% block content %}
+    <span><h1> acts list </h1></span><span><a href="{% url 'act_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
+
+    {% for act in acts %}
+         <div class="act">
+             <div class="Name">
+                <h3><a href="{%  url 'act_detail' act.id %}">{{act.Name}}</a></h3>
+             </div>
+             <p>{{ act.Payment_info }}</p>
+
+        </div>
+
+
+    {% endfor %}
+{% endblock %}

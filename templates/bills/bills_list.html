@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} All bills {% endblock %}
+
+{% block content %}
+    <h1> All bills </h1><span class="glyphicon glyphicon-plus"></span></a>
+    {% for bill in bills %}
+        <h2><a href="{%  url 'bill_detail' bill.id %}"> bill No:{{bill.id}}</a> </h2>
+        <p>Client: {{bill.Client_id}}</p><br>
+        <p>Made by Brief No: {{bill.Brief_id}}</p>
+        <p>For services: {{bill.Brief_id}}</p>
+    {% endfor %}
+{% endblock %}

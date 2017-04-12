@@ -2,13 +2,53 @@
 
 {% block content %}
 <div class="container">
-<div class="row">
-
-<div class="jumbotron">
-  <h1>Hello</h1>
-  <p>You are on your Dashboard</p>
-
-</div>
-</div>
+    <div class="row">
+        <div class="jumbotron">
+          <h1>Доброго дня</h1>
+          <p>Вітаємо вас у системі обліку документів!</p>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Меню клієнта</h2>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'bills' %}">Рахунки</a></h3>
+            <p>Меню обліку рахунків</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'contracts' %}">Договори</a></h3>
+            <p>Меню обліку договорів з клієнтами</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'briefs' %}">Бріфи</a></h3>
+            <p>Меню обліку бріфів рекламних кампаній</p>
+        </div>
+    </div>
+    <div class="row">
+        <h2>Меню агенції</h2>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'clients' %}">Клієнти</a></h3>
+            <p>Меню обліку клієнтів</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'contractors' %}">Підрядники</a></h3>
+            <p>Меню обліку підрядників</p>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4 fill-height-or-more">
+        <div class="jumbotron">
+            <h3><a href="{% url 'managers' %}">Працівники</a></h3>
+            <p>Меню обліку працівників</p>
+        </div>
+    </div>
 </div>
 {% endblock %}

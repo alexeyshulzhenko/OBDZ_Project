@@ -16,7 +16,14 @@ class ServiceForm(forms.ModelForm):
     class Meta:
         model = Service
         fields = ('Name', 'Contractor_id', 'Price_per_item', 'Count_item')
-
+    def __init__(self, *args, **kwargs):
+        super(ServiceForm, self).__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
 
 
@@ -25,7 +32,16 @@ class ClientForm(forms.ModelForm):
     class Meta:
         model = Client
         fields = ('Name', 'Registration_adress', 'Office_adress', 'Phone', 'Personal_Discount', 'Software', 'Mail', 'Payment_info')
+    def __init__(self, *args, **kwargs):
+        super(ClientForm, self).__init__(*args, **kwargs)
 
+        self.fields["Mail"] = forms.EmailField()
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
 class ContractForm(forms.ModelForm):
     class Meta:
@@ -39,7 +55,12 @@ class ContractForm(forms.ModelForm):
         self.fields["Date"].widget = SelectDateWidget()
         self.fields["Start_date"].widget = SelectDateWidget()
         self.fields["End_date"].widget = SelectDateWidget()
-
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
 class ManagerForm(forms.ModelForm):
 
@@ -50,7 +71,12 @@ class ManagerForm(forms.ModelForm):
         super(ManagerForm, self).__init__(*args, **kwargs)
 
         self.fields["Birthday_date"].widget = SelectDateWidget()
-
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
 class BriefForm(forms.ModelForm):
 
@@ -63,11 +89,39 @@ class BriefForm(forms.ModelForm):
         self.fields["Date"].widget = SelectDateWidget()
         self.fields["Start_date"].widget = SelectDateWidget()
         self.fields["End_date"].widget = SelectDateWidget()
-
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
 class ContractorForm(forms.ModelForm):
 
     class Meta:
         model = Contractor
         fields = ('Name', 'Payment_info')
+    def __init__(self, *args, **kwargs):
+        super(ContractorForm, self).__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
 
+class ActForm(forms.ModelForm):
+
+    class Meta:
+        model = Act
+        fields = ('Client_id', 'Date', 'Manager_id')
+    def __init__(self, *args, **kwargs):
+        super(ActForm, self).__init__(*args, **kwargs)
+
+        self.fields["Date"].widget = SelectDateWidget()
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })

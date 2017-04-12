@@ -42,7 +42,7 @@ class Act(models.Model):
     Date = models.DateField(max_length=100)
     Manager_id = models.ForeignKey(Manager)
     def __str__(self):
-        return self.Product
+        return str(self.id)
 
 class Bill(models.Model):
     id = models.AutoField(primary_key=True)
@@ -50,7 +50,7 @@ class Bill(models.Model):
     Date = models.DateField(max_length=100)
     Manager_id = models.ForeignKey(Manager)
     def __str__(self):
-        return self.Product
+        return str(self.id)
 
 class Contractor(models.Model):
     id = models.AutoField(primary_key=True)
@@ -78,7 +78,4 @@ class Contract(models.Model):
     Client_id = models.ForeignKey(Client)
     Services = models.ManyToManyField(Service)
     def __str__(self):
-        return self.id
-    def get_absolute_url(self):
-        return reverse("accept_bid", kwargs={"bid_id": self.id})
-
+        return str(self.id + self.Client_id)

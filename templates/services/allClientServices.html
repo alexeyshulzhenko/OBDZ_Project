@@ -8,10 +8,11 @@
         <table>
             {% for Service in services %}
                 <tr>
-                    <td>Service.ClientName</td>
-                    <td>Service.ServiceName</td>
+                    <td>{{Service.Name}}</td>
+                    <td>{{Service.service}}</td>
                 </tr>
+            {% endfor %}
         </table>
 
-    {% endfor %}
+
 {% endblock %}

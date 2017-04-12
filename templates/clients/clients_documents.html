@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1> Clients documents</h1>
+      {% for Client in clients %}
+         <div class="client">
+             <div class="Name">
+                <h3><a href="{% url 'client_detail' id=Client.id %}">{{Client.Name}}</a></h3>
+             </div>
+             <p>{{ Client.Payment_info }}</p>
+             <p>{{Client.Mail}} </p>
+             <p>{{Client.Phone}} </p>
+        </div>
+
+
+    {% endfor %}
+{% endblock %}
+

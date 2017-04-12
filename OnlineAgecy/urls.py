@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^clients/(?P<id>\d+)/$', views.client_detail, name='client_detail'),
     url(r'^clients/new/$', views.client_new, name='client_new'),
     url(r'^clients/(?P<id>\d+)/edit/$', views.client_edit, name='client_edit'),
+    url(r'^clients/documents/(?P<id>\d+)/$', views.clients_documents, name='clients_documents'),
 
     url(r'^contracts/$', views.contracts, name='contracts'),
     url(r'^contracts/(?P<id>\d+)/$', views.contract_detail, name='contract_detail'),
@@ -41,4 +42,12 @@ urlpatterns = [
     url(r'^contractors/(?P<id>\d+)/$', views.contractor_detail, name='contractor_detail'),
     url(r'^contractors/new/$', views.contractors_new, name='contractors_new'),
     url(r'^contractors/(?P<id>\d+)/edit/$', views.contractor_edit, name='contractor_edit'),
+
+    url(r'^acts/$', views.acts, name='acts'),
+    url(r'^acts/(?P<id>\d+)/$', views.act_detail, name='act_detail'),
+    url(r'^acts/new/$', views.act_new, name='act_new'),
+    url(r'^acts/(?P<id>\d+)/edit/$', views.act_edit, name='act_edit'),
+
+    url(r'^bills/$', views.bills, name='bills'),
+    url(r'^bills/(?P<id>\d+)/$', views.bills_detail, name='bill_detail'),
 ]

@@ -60,7 +60,7 @@ def all_clients_contracts(request, id):
 	# get the blog clients that are published
 	items = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + id)
 	# now return the rendered template
-	return render(request, "clients/allUserContracts.html", {'items': items}, {'client': id})
+	return render(request, "clients/allUserContracts.html", {'items': items})
 
 @login_required(login_url="login/")
 def clients_documents(request, id):
@@ -90,6 +90,7 @@ def contract_new(request):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
+            form.save_m2m()
             return redirect('contracts')
     else:
         form = ContractForm()
@@ -115,6 +116,10 @@ def contract_edit(request, id):
     return render(request, 'layouts/form.html', {'form': form})
 
 
+@login_required(login_url="login/")
+def contracts_by_date(request, Date):
+    contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Date =' + Date)
+    return render(request, "contracts/contracts_list.html", {'contracts': contracts})
 #--------------------Manager Views------------------------------#
 #################################################################
 

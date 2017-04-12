@@ -3,11 +3,13 @@
 {% block content %}
      <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
          <div class="Name">
-             Contract No: {{contract.id}}
+             <h2>Договір No: {{contract.id}}</h2>
          </div>
-         <h1>{{contract.Start_date}}</h1>
-         <p>{{contract.Mail}} </p>
-         <p>{{contract.Phone}} </p>
+         <p>{{contract.Start_date}}</p>
+         <p>{{contract.End_date}} </p>
+         <p>Бріф № {{ contract.Brief_id }}</p>
+         <p>Відповідальний: {{contract.Manager_id}} </p>
+         <p>Послуги: {{ contract.Services }}</p>
          <a class="btn btn-default" href="{% url 'client_edit' id=contract.id %}">
              <span class="glyphicon glyphicon-pencil"></span>
          </a>

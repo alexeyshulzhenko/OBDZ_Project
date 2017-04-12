@@ -19,7 +19,7 @@ urlpatterns = [
     url(r'^contracts/new/$', views.contract_new, name='contract_new'),
     url(r'^contracts/(?P<id>\d+)/edit/$', views.contract_edit, name='contract_edit'),
     url(r'^contracts/list/(?P<id>\d+)/$', views.all_clients_contracts, name='all_clients_contracts'),
-
+    url(r'^contracts/(?P<Date>\d+)/$', views.contracts_by_date, name='contracts_by_date'),
 
     url(r'^manager/$', views.managers, name='managers'),
     url(r'^manager/(?P<id>\d+)/$', views.manager_detail, name='manager_detail'),

@@ -63,10 +63,9 @@ def all_clients_contracts(request, id):
 	return render(request, "clients/allUserContracts.html", {'items': items})
 
 @login_required(login_url="login/")
-def clients_documents(request, id):
-    item = Client.objects.raw('SELECT OnlineAgecy_client.id, OnlineAgecy_client.Name AS Name, OnlineAgecy_act.Client_id_id AS id  '
-                                'from OnlineAgecy_client join OnlineAgecy_act using (id) WHERE OnlineAgecy_client.id =' + id)
-    return render(request, 'clients/clients_documents.html', {'item': item})
+def clients_services_count(request):
+    items = Client.objects.raw('SELECT OnlineAgecy_client.Name, count(OnlineAgecy_contract_Services.id) AS num, OnlineAgecy_client.id, OnlineAgecy_contract.id FROM (OnlineAgecy_client INNER JOIN OnlineAgecy_contract ON OnlineAgecy_client.id = OnlineAgecy_contract.Client_id_id)INNER JOIN OnlineAgecy_contract_Services ON OnlineAgecy_contract_Services.contract_id = OnlineAgecy_contract.id GROUP BY OnlineAgecy_client.id ORDER BY  count(OnlineAgecy_contract_Services.id) DESC')
+    return render(request, 'clients/clients_services.html', {'items': items})
 
 
 

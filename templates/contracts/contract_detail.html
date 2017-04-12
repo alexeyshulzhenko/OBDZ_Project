@@ -10,7 +10,7 @@
          <p>Бріф № {{ contract.Brief_id }}</p>
          <p>Відповідальний: {{contract.Manager_id}} </p>
          <p>Послуги: {{ contract.Services }}</p>
-         <a class="btn btn-default" href="{% url 'client_edit' id=contract.id %}">
+         <a class="btn btn-default" href="{% url 'contract_edit' id=contract.id %}">
              <span class="glyphicon glyphicon-pencil"></span>
          </a>
      </div>

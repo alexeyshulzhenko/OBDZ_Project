@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^clients/(?P<id>\d+)/$', views.client_detail, name='client_detail'),
     url(r'^clients/new/$', views.client_new, name='client_new'),
     url(r'^clients/(?P<id>\d+)/edit/$', views.client_edit, name='client_edit'),
-    url(r'^clients/documents/(?P<id>\d+)/$', views.clients_documents, name='clients_documents'),
+    url(r'^clients/sevices/$', views.clients_services_count, name='clients_services_count'),
 
     url(r'^contracts/$', views.contracts, name='contracts'),
     url(r'^contracts/(?P<id>\d+)/$', views.contract_detail, name='contract_detail'),

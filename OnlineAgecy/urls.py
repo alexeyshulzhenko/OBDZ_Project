@@ -13,6 +13,9 @@ urlpatterns = [
     url(r'^clients/new/$', views.client_new, name='client_new'),
     url(r'^clients/(?P<id>\d+)/edit/$', views.client_edit, name='client_edit'),
     url(r'^clients/sevices/$', views.clients_services_count, name='clients_services_count'),
+    url(r'^clients/bills/(?P<id>\d+)/$', views.all_clients_bills, name='all_clients_bills'),
+
+
 
     url(r'^contracts/$', views.contracts, name='contracts'),
     url(r'^contracts/(?P<id>\d+)/$', views.contract_detail, name='contract_detail'),

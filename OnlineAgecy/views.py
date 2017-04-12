@@ -64,11 +64,17 @@ def all_clients_contracts(request, id):
 
 @login_required(login_url="login/")
 def clients_services_count(request):
-    items = Client.objects.raw('SELECT OnlineAgecy_client.Name, count(OnlineAgecy_contract_Services.id) AS num, OnlineAgecy_client.id, OnlineAgecy_contract.id FROM (OnlineAgecy_client INNER JOIN OnlineAgecy_contract ON OnlineAgecy_client.id = OnlineAgecy_contract.Client_id_id)INNER JOIN OnlineAgecy_contract_Services ON OnlineAgecy_contract_Services.contract_id = OnlineAgecy_contract.id GROUP BY OnlineAgecy_client.id ORDER BY  count(OnlineAgecy_contract_Services.id) DESC')
+    items = Client.objects.raw('SELECT OnlineAgecy_client.Name, count(OnlineAgecy_contract_Services.id) AS num, OnlineAgecy_client.id, OnlineAgecy_contract.id '
+                               'FROM (OnlineAgecy_client INNER JOIN OnlineAgecy_contract ON OnlineAgecy_client.id = OnlineAgecy_contract.Client_id_id)INNER JOIN OnlineAgecy_contract_Services ON OnlineAgecy_contract_Services.contract_id = OnlineAgecy_contract.id '
+                               'GROUP BY OnlineAgecy_client.id '
+                               'ORDER BY  count(OnlineAgecy_contract_Services.id) DESC')
     return render(request, 'clients/clients_services.html', {'items': items})
 
-
-
+def all_clients_bills(request, id):
+    items = Client.objects.raw('SELECT OnlineAgecy_client.id, OnlineAgecy_client.Name AS Name, OnlineAgecy_contract.id, OnlineAgecy_act.id, OnlineAgecy_bill.Act_id_id AS Act_id '
+                               'FROM ((OnlineAgecy_client INNER JOIN OnlineAgecy_contract ON OnlineAgecy_client.id = OnlineAgecy_contract.Client_id_id) INNER JOIN OnlineAgecy_act ON OnlineAgecy_contract.id = OnlineAgecy_act.Contract_id_id) INNER JOIN OnlineAgecy_bill ON OnlineAgecy_act.id=OnlineAgecy_bill.Act_id_id '
+                               'WHERE OnlineAgecy_client.id =' + id)
+    return render(request, 'clients/clients_bills.html', {'items': items})
 
 #--------------------Contracts Views------------------------------#
 ###################################################################
@@ -119,6 +125,8 @@ def contract_edit(request, id):
 def contracts_by_date(request, Date):
     contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Date =' + Date)
     return render(request, "contracts/contracts_list.html", {'contracts': contracts})
+
+
 #--------------------Manager Views------------------------------#
 #################################################################
 

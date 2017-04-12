@@ -114,7 +114,7 @@ class ActForm(forms.ModelForm):
 
     class Meta:
         model = Act
-        fields = ('Client_id', 'Date', 'Manager_id')
+        fields = ('Contract_id', 'Date', 'Manager_id')
     def __init__(self, *args, **kwargs):
         super(ActForm, self).__init__(*args, **kwargs)
 

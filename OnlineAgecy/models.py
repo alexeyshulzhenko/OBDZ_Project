@@ -36,22 +36,6 @@ class Brief(models.Model):
         return str(self.id)
 
 
-class Act(models.Model):
-    id = models.AutoField(primary_key=True)
-    Client_id = models.ForeignKey(Client)
-    Date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Manager)
-    def __str__(self):
-        return str(self.id)
-
-class Bill(models.Model):
-    id = models.AutoField(primary_key=True)
-    Act_id = models.ForeignKey(Act)
-    Date = models.DateField(max_length=100)
-    Manager_id = models.ForeignKey(Manager)
-    def __str__(self):
-        return str(self.id)
-
 class Contractor(models.Model):
     id = models.AutoField(primary_key=True)
     Name = models.CharField(max_length=40)
@@ -79,3 +63,20 @@ class Contract(models.Model):
     Services = models.ManyToManyField(Service)
     def __str__(self):
         return str(self.id + self.Client_id)
+
+
+class Act(models.Model):
+    id = models.AutoField(primary_key=True)
+    Contract_id = models.ForeignKey(Contract)
+    Date = models.DateField(max_length=100)
+    Manager_id = models.ForeignKey(Manager)
+    def __str__(self):
+        return str(self.id)
+
+class Bill(models.Model):
+    id = models.AutoField(primary_key=True)
+    Act_id = models.ForeignKey(Act)
+    Date = models.DateField(max_length=100)
+    Manager_id = models.ForeignKey(Manager)
+    def __str__(self):
+        return str(self.id)

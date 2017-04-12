@@ -30,7 +30,7 @@ def client_new(request):
         if form.is_valid():
             client = form.save(commit=False)
             client.save()
-            return redirect('client_detail', id=id)
+            return redirect('clients')
     else:
         form = ClientForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -90,7 +90,7 @@ def contract_new(request):
         if form.is_valid():
             contract = form.save(commit=False)
             contract.save()
-            return redirect('contract_detail', id=id)
+            return redirect('contracts')
     else:
         form = ContractForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -135,7 +135,7 @@ def manager_new(request):
         if form.is_valid():
             manager = form.save(commit=False)
             manager.save()
-            return redirect('manager_detail', id=id)
+            return redirect('managers')
     else:
         form = ManagerForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -179,7 +179,7 @@ def brief_new(request):
         if form.is_valid():
             brief = form.save(commit=False)
             brief.save()
-            return redirect('brief_detail', id=id)
+            return redirect('briefs')
     else:
         form = BriefForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -223,7 +223,7 @@ def services_new(request):
         if form.is_valid():
             services = form.save(commit=False)
             services.save()
-            return redirect('service_detail', id=id)
+            return redirect('services')
     else:
         form = ServiceForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -279,7 +279,7 @@ def contractors_new(request):
         if form.is_valid():
             contractors = form.save(commit=False)
             contractors.save()
-            return redirect('contractor_detail', id=id)
+            return redirect('contractors')
     else:
         form = ContractorForm()
     return render(request, 'layouts/form.html', {'form': form})
@@ -323,7 +323,7 @@ def act_new(request):
         if form.is_valid():
             acts = form.save(commit=False)
             acts.save()
-            return redirect('act_detail', id=id)
+            return redirect('acts')
     else:
         form = ActForm()
     return render(request, 'layouts/form.html', {'form': form})

@@ -78,8 +78,8 @@ def all_clients_bills(request, id):
 
 def fresh_clients(request):
     items = Client.objects.raw('SELECT id ,Name FROM OnlineAgecy_client WHERE NOT EXISTS(SELECT id '
-                                                                                         'FROM OnlineAgecy_service WHERE NOT EXISTS (SELECT contract_id, service_id '
-                                                                                                                                    'FROM OnlineAgecy_contract_Services WHERE OnlineAgecy_contract_Services.service_id = OnlineAgecy_service.id))')
+                                                                                         'FROM OnlineAgecy_service WHERE NOT EXISTS (SELECT service_id '
+                                                                                                                                    'FROM OnlineAgecy_contract_Services WHERE service_id = OnlineAgecy_service.id))')
     return render(request, 'clients/blacklist.html', {'items': items})
 
 #--------------------Contracts Views------------------------------#
@@ -177,7 +177,10 @@ def manager_edit(request, id):
         form = ManagerForm(instance=manager)
     return render(request, 'layouts/form.html', {'form': form})
 
-
+@login_required(login_url="login/")
+def managers_clients_count(request):
+    items = Manager.objects.raw('SELECT OnlineAgecy_manager.Name, count(OnlineAgecy_client.id) AS num, OnlineAgecy_contract.id FROM (OnlineAgecy_manager INNER JOIN OnlineAgecy_contract ON OnlineAgecy_manager.id = OnlineAgecy_contract.Manager_id_id)INNER JOIN OnlineAgecy_client ON OnlineAgecy_contract.Manager_id_id = OnlineAgecy_client.id GROUP BY OnlineAgecy_client.id ORDER BY  count(OnlineAgecy_client.id) DESC')
+    return render(request, 'manager/manager_clients.html', {'items': items})
 
 #--------------------Brief Views------------------------------#
 ###############################################################

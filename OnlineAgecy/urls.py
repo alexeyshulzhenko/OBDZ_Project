@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^manager/(?P<id>\d+)/$', views.manager_detail, name='manager_detail'),
     url(r'^manager/new/$', views.manager_new, name='manager_new'),
     url(r'^manager/(?P<id>\d+)/edit/$', views.manager_edit, name='manager_edit'),
+    url(r'^manager/clients/$', views.managers_clients_count, name='managers_clients_count'),
 
     url(r'^briefs/$', views.brief, name='briefs'),
     url(r'^briefs/(?P<id>\d+)/$', views.brief_detail, name='brief_detail'),
@@ -39,6 +40,7 @@ urlpatterns = [
     url(r'^services/new/$', views.services_new, name='services_new'),
     url(r'^services/(?P<id>\d+)/edit/$', views.service_edit, name='service_edit'),
     url(r'^services/table/(?P<id>\d+)/$', views.service_all_clients, name='service_all_clients'),
+
 
     url(r'^contractors/$', views.contractors, name='contractors'),
     url(r'^contractors/(?P<id>\d+)/$', views.contractor_detail, name='contractor_detail'),

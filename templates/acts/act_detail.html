@@ -7,5 +7,6 @@
      <h1>{{act.Date}}</h1>
      <p>{{act.Manager_id}} </p>
      <a class="btn btn-default" href="{% url 'act_edit' id=act.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'delete_act' id=act.id %}"><span class="glyphicon glyphicon glyphicon-trash"></span></a>
 {% endblock %}
 

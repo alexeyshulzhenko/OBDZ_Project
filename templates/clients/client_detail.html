@@ -17,7 +17,7 @@
          <a class="btn btn-default" href="{% url 'client_edit' id=client.id %}">
              <span class="glyphicon glyphicon-pencil"></span>
          </a>
-
+        <a class="btn btn-default" href="{% url 'delete_client' id=client.id %}"><span class="glyphicon glyphicon-trash"></span></a>
          <a class="btn btn-default" href="{% url 'all_clients_contracts' id=client.id %}">Переглянути договри</a>
          <a class="btn btn-default" href="{% url 'all_clients_bills' id=client.id %}">Переглянути рахунки</a>
         <span>

@@ -56,11 +56,24 @@ def client_edit(request, id):
     return render(request, 'layouts/form.html', {'form': form})
 
 @login_required(login_url="login/")
+def delete_client(request, id):
+    query = Client.objects.get(id=id)
+    query.delete()
+    return redirect('clients')
+
+@login_required(login_url="login/")
 def all_clients_contracts(request, id):
 	# get the blog clients that are published
 	items = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Client_id_id =' + id)
 	# now return the rendered template
 	return render(request, "clients/allUserContracts.html", {'items': items})
+
+@login_required(login_url="login/")
+def all_clients_briefs(request, id):
+	# get the blog clients that are published
+	items = Brief.objects.raw('SELECT * FROM OnlineAgecy_brief WHERE Client_id_id =' + id)
+	# now return the rendered template
+	return render(request, "clients/allUserBriefs.html", {'items': items})
 
 @login_required(login_url="login/")
 def clients_services_count(request):
@@ -132,7 +145,11 @@ def contracts_by_date(request, Date):
     contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract WHERE Date =' + Date)
     return render(request, "contracts/contracts_list.html", {'contracts': contracts})
 
-
+@login_required(login_url="login/")
+def delete_contract(request, id):
+    query = Contract.objects.get(id=id)
+    query.delete()
+    return redirect('contracts')
 #--------------------Manager Views------------------------------#
 #################################################################
 
@@ -182,6 +199,11 @@ def managers_clients_count(request):
     items = Manager.objects.raw('SELECT OnlineAgecy_manager.Name, count(OnlineAgecy_client.id) AS num, OnlineAgecy_contract.id FROM (OnlineAgecy_manager INNER JOIN OnlineAgecy_contract ON OnlineAgecy_manager.id = OnlineAgecy_contract.Manager_id_id)INNER JOIN OnlineAgecy_client ON OnlineAgecy_contract.Manager_id_id = OnlineAgecy_client.id GROUP BY OnlineAgecy_client.id ORDER BY  count(OnlineAgecy_client.id) DESC')
     return render(request, 'manager/manager_clients.html', {'items': items})
 
+@login_required(login_url="login/")
+def delete_manager(request, id):
+    query = Manager.objects.get(id=id)
+    query.delete()
+    return redirect('managers')
 #--------------------Brief Views------------------------------#
 ###############################################################
 
@@ -224,8 +246,11 @@ def brief_edit(request, id):
         form = ManagerForm(instance=brief)
     return render(request, 'layouts/form.html', {'form': form})
 
-
-
+@login_required(login_url="login/")
+def delete_brief(request, id):
+    query = Brief.objects.get(id=id)
+    query.delete()
+    return redirect('briefs')
 
 #--------------------Services Views------------------------------#
 ##################################################################
@@ -279,7 +304,11 @@ def service_all_clients(request, id):
 	return render(request, "services/allClientServices.html", {'services': services})
 
 
-
+@login_required(login_url="login/")
+def delete_service(request, id):
+    query = Service.objects.get(id=id)
+    query.delete()
+    return redirect('services')
 
 
 #--------------------contractors Views------------------------------#
@@ -330,6 +359,11 @@ def newest_contractors(request):
                                    'WHERE OnlineAgecy_contract_Services.service_id = OnlineAgecy_service.id))')
     return render(request, 'contractors/new_contractors.html', {'items': items})
 
+@login_required(login_url="login/")
+def delete_contractor(request, id):
+    query = Contractor.objects.get(id=id)
+    query.delete()
+    return redirect('contractors')
 
 #--------------------Act Views------------------------------#
 #####################################################################
@@ -373,6 +407,11 @@ def act_edit(request, id):
         form = ActForm(instance=act)
     return render(request, 'layouts/form.html', {'form': form})
 
+@login_required(login_url="login/")
+def delete_act(request, id):
+    query = Act.objects.get(id=id)
+    query.delete()
+    return redirect('acts')
 #--------------------Bill Views------------------------------#
 #####################################################################
 
@@ -383,10 +422,37 @@ def bills(request):
 
     return render(request, "bills/bills_list.html", {'bills': bills})
 
+def bills_new(request):
+    if request.method == "POST":
+        form = BillForm(request.POST)
+        if form.is_valid():
+            bills = form.save(commit=False)
+            bills.save()
+            return redirect('bills')
+    else:
+        form = BillForm()
+    return render(request, 'layouts/form.html', {'form': form})
 
 @login_required(login_url="login/")
 def bills_detail(request, id):
     bill = get_object_or_404(Bill, id=id)
     return render(request, 'bills/bill_detail.html', {'bill': bill})
 
+@login_required(login_url="login/")
+def bills_edit(request, id):
+    bill = get_object_or_404(Bill, id=id)
+    if request.method == "POST":
+        form = BillForm(request.POST, instance=bill)
+        if form.is_valid():
+            bill = form.save(commit=False)
+            bill.save()
+            return redirect('bills_detail', id=id)
+    else:
+        form = BillForm(instance=bill)
+    return render(request, 'layouts/form.html', {'form': form})
 
+@login_required(login_url="login/")
+def delete_bill(request, id):
+    query = Bill.objects.get(id=id)
+    query.delete()
+    return redirect('bills')

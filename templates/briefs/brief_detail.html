@@ -9,5 +9,6 @@
      <p>End date: {{brief.End_date}} </p>
      <p>Date added: {{brief.Date}}</p>
      <a class="btn btn-default" href="{% url 'brief_edit' id=brief.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'delete_brief' id=brief.id %}"><span class="glyphicon glyphicon-trash"></span></a>
 {% endblock %}
 

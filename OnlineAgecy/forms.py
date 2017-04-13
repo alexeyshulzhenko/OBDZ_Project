@@ -53,6 +53,12 @@ class ContractForm(forms.ModelForm):
 
         self.fields["Services"].widget = CheckboxSelectMultiple()
         self.fields["Services"].queryset = Service.objects.all()
+
+# TODO Autopopulated fields
+#http://www.b-list.org/weblog/2006/nov/02/django-tips-auto-populated-fields/
+# self.fields["Brief_id"].queryset = Service.objects.raw('SELECT * FROM OnlineAgecy_brief WHERE Client_id_id =' + context['Client_id'])
+
+
         self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
         self.fields["Start_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker2'})
         self.fields["End_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
@@ -71,7 +77,7 @@ class ManagerForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ManagerForm, self).__init__(*args, **kwargs)
 
-        self.fields["Birthday_date"].widget = SelectDateWidget()
+        self.fields["Birthday_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:
@@ -87,9 +93,9 @@ class BriefForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(BriefForm, self).__init__(*args, **kwargs)
 
-        self.fields["Date"].widget = SelectDateWidget()
-        self.fields["Start_date"].widget = SelectDateWidget()
-        self.fields["End_date"].widget = SelectDateWidget()
+        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+        self.fields["Start_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker2'})
+        self.fields["End_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:
@@ -119,7 +125,23 @@ class ActForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ActForm, self).__init__(*args, **kwargs)
 
-        self.fields["Date"].widget = SelectDateWidget()
+        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
+        for field_name in self.fields:
+            field = self.fields.get(field_name)
+            if field:
+                field.widget.attrs.update({
+                    'class': "form-control myfont"
+                })
+
+class BillForm(forms.ModelForm):
+
+    class Meta:
+        model = Bill
+        fields = ('Act_id', 'Date', 'Manager_id')
+    def __init__(self, *args, **kwargs):
+        super(BillForm, self).__init__(*args, **kwargs)
+
+        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:

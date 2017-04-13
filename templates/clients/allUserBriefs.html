@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block title %} Всі бріфи клієнта {% endblock %}
+
+{% block content %}
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <span>
+            <button onclick="myFunction()" class="print">
+                <span class="glyphicon glyphicon glyphicon-print"></span>
+            </button>
+        </span>
+
+        <script>
+            function myFunction() {
+                window.print();
+            }
+        </script>
+        <h1> Всі бріфи клієнта </h1><a href="{% url 'contract_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% for item in items %}
+            <h2><a href="{%  url 'contract_detail' item.id %}">Договоір No:{{item.id}}</a> від {{ item.Date }}</h2>
+            <p>Manager: {{item.Manager_id}}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

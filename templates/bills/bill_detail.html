@@ -5,6 +5,7 @@
          bill No: {{bill.id}}
      </div>
      <h1>{{bill.Client_id}}</h1>
-
+    <a class="btn btn-default" href="{% url 'bills_edit' id=bill.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'delete_bill' id=bill.id %}"><span class="glyphicon glyphicon glyphicon-trash"></span></a>
 {% endblock %}
 

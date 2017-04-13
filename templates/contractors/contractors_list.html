@@ -9,7 +9,17 @@
         <a class="btn btn-default" href="{% url 'newest_contractors' %}">
              Підрядники, послугами яких ніхто не користується
         </a>
+        <span>
+            <button onclick="myFunction()" class="print">
+                <span class="glyphicon glyphicon glyphicon-print"></span>
+            </button>
+        </span>
 
+        <script>
+            function myFunction() {
+                window.print();
+            }
+        </script>
         <span class="plus col-md-1 col-lg-1">
             <a href="{% url 'newest_contractors' %}" class="top-menu">
                 <span class="glyphicon glyphicon-plus"></span>

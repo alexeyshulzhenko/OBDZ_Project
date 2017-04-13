@@ -9,6 +9,17 @@
 
         <span><h1> Всі клієнти </h1></span>
         <span>
+            <button onclick="myFunction()" class="print">
+                <span class="glyphicon glyphicon glyphicon-print"></span>
+            </button>
+        </span>
+
+        <script>
+            function myFunction() {
+                window.print();
+            }
+        </script>
+        <span>
             <a href="{% url 'client_new' %}" class="top-menu">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>

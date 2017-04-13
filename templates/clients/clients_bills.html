@@ -3,6 +3,17 @@
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
         <h1> Звіт "Клієнти по кількості послуг"</h1>
+        <span>
+            <button onclick="myFunction()" class="print">
+                <span class="glyphicon glyphicon glyphicon-print"></span>
+            </button>
+        </span>
+
+        <script>
+        function myFunction() {
+            window.print();
+        }
+    </script>
     <ul>
           {% for Item in items %}
               <li><a href="{%  url 'bill_detail' Item.Act_id %}">Рахунок № {{ Item.Act_id }}</a></li>

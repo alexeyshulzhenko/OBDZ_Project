@@ -6,7 +6,17 @@
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
 
+        <span>
+            <button onclick="myFunction()" class="print">
+                <span class="glyphicon glyphicon glyphicon-print"></span>
+            </button>
+        </span>
 
+        <script>
+            function myFunction() {
+                window.print();
+            }
+        </script>
         <span><h1> Нові клієнти </h1></span>
         <span><h3> Клієнти, які ще не підписали з нами перший договір </h3></span>
         {% for item in items %}

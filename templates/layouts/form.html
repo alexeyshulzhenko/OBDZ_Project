@@ -7,4 +7,36 @@
             <button type="submit" class="save btn btn-default">Save</button>
         </form>
     </div>
+    {% block javascript %}
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+                });
+                $('#datetimepicker3').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+                });
+                $('#datetimepicker4').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+                });
+                $('#datetimepicker5').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+                });
+                $('#datetimepicker12').datetimepicker({
+                    inline: true,
+                    sideBySide: true,
+                    format: 'DD.MM.YYYY' /*remove this line if you want to use time as well */
+                });
+            });
+        </script>
+    {% endblock %}
 {% endblock %}

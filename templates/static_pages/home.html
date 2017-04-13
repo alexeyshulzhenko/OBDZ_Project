@@ -8,27 +8,31 @@
           <p>Вітаємо вас у системі обліку документів!</p>
         </div>
     </div>
-    <div class="row">
-        <h2>Меню клієнта</h2>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'bills' %}">Рахунки</a></h3>
-            <p>Меню обліку рахунків</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'contracts' %}">Договори</a></h3>
-            <p>Меню обліку договорів з клієнтами</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'briefs' %}">Бріфи</a></h3>
-            <p>Меню обліку бріфів рекламних кампаній</p>
-        </div>
-    </div>
+ {% for group in user.groups.all %}
+        {% if group.name == 'client' %}
+            <div class="row">
+                <h2>Меню клієнта</h2>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'all_clients_bills' id=request.user.id %}">Рахунки</a></h3>
+                    <p>Меню обліку рахунків</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'all_clients_contracts' id=request.user.id %}">Договори</a></h3>
+                    <p>Меню обліку договорів з клієнтами</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'briefs' %}">Бріфи</a></h3>
+                    <p>Меню обліку бріфів рекламних кампаній</p>
+                </div>
+            </div>
+            {% endif %}
+    {% endfor %}
     {% for group in user.groups.all %}
         {% if group.name == 'manager' %}
             <div class="row">

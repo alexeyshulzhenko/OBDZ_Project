@@ -47,14 +47,15 @@ class ContractForm(forms.ModelForm):
     class Meta:
         model = Contract
         fields = ('Date', 'Start_date', 'End_date', 'Manager_id', 'Brief_id', 'Client_id', 'Services')
+
     def __init__(self, *args, **kwargs):
         super(ContractForm, self).__init__(*args, **kwargs)
 
         self.fields["Services"].widget = CheckboxSelectMultiple()
         self.fields["Services"].queryset = Service.objects.all()
-        self.fields["Date"].widget = SelectDateWidget()
-        self.fields["Start_date"].widget = SelectDateWidget()
-        self.fields["End_date"].widget = SelectDateWidget()
+        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+        self.fields["Start_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker2'})
+        self.fields["End_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:

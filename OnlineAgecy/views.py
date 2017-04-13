@@ -77,9 +77,9 @@ def all_clients_bills(request, id):
     return render(request, 'clients/clients_bills.html', {'items': items})
 
 def fresh_clients(request):
-    items = Client.objects.raw('SELECT id ,Name FROM OnlineAgecy_client WHERE NOT EXISTS(SELECT id '
-                                                                                         'FROM OnlineAgecy_service WHERE NOT EXISTS (SELECT service_id '
-                                                                                                                                    'FROM OnlineAgecy_contract_Services WHERE service_id = OnlineAgecy_service.id))')
+    items = Client.objects.raw('SELECT id ,Name FROM OnlineAgecy_client WHERE id NOT IN (SELECT Client_id_id '
+                               'FROM OnlineAgecy_contract WHERE NOT EXISTS (SELECT service_id  '
+                               'FROM OnlineAgecy_contract_Services WHERE service_id = OnlineAgecy_contract.id))')
     return render(request, 'clients/blacklist.html', {'items': items})
 
 #--------------------Contracts Views------------------------------#

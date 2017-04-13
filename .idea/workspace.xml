@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e088ecf6-b30b-45c2-997a-070d4530549a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/manager/manager_clients.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineAgecy/urls.py" afterPath="$PROJECT_DIR$/OnlineAgecy/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineAgecy/views.py" afterPath="$PROJECT_DIR$/OnlineAgecy/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/contractors/contractors_list.html" afterPath="$PROJECT_DIR$/templates/contractors/contractors_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/manager/manager_list.html" afterPath="$PROJECT_DIR$/templates/manager/manager_list.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -81,8 +80,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OnlineAgecy/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="30" column="89" lean-forward="false" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
+            <state relative-caret-position="423">
+              <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="58" />
               <folding>
                 <element signature="e#23#55#0" expanded="true" />
               </folding>
@@ -103,42 +102,34 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlineAgecy/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="184" column="17" lean-forward="false" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
+            <state relative-caret-position="3662">
+              <caret line="326" column="15" lean-forward="false" selection-start-line="326" selection-start-column="4" selection-end-line="326" selection-end-column="15" />
               <folding>
                 <element signature="e#31#95#0" expanded="true" />
-                <marker date="1492061933000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
-                <marker date="1492061933000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3566" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3683" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3719" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3889" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3931" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3500:3933" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="3702:3719" ph="SELECT contr... " />
-                <marker date="1492061933000" expanded="true" signature="5632:5679" ph="SELECT * FRO... OnlineAgecy_contract" />
-                <marker date="1492061933000" expanded="true" signature="7330:7711" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492061933000" expanded="true" signature="12915:12958" ph="SELECT id AS... OnlineAgecy_contractor" />
-                <marker date="1492061933000" expanded="true" signature="12915:12995" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492061933000" expanded="true" signature="12915:13020" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492061933000" expanded="true" signature="12915:13107" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492061933000" expanded="true" signature="12915:13142" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492061933000" expanded="true" signature="12915:13252" ph="SELECT id AS... OnlineAgecy_contractor" />
-                <marker date="1492061933000" expanded="true" signature="12915:13254" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492062289000" expanded="true" signature="1148:1151" ph="Select * FRO... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="1148:1154" ph="Select * FRO... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492062289000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3566" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3683" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3719" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3889" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3931" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3500:3933" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="3702:3719" ph="SELECT contr... " />
+                <marker date="1492062289000" expanded="true" signature="5632:5679" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492062289000" expanded="true" signature="7330:7711" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492062289000" expanded="true" signature="12915:12958" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492062289000" expanded="true" signature="12915:12995" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492062289000" expanded="true" signature="12915:13020" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492062289000" expanded="true" signature="12915:13107" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492062289000" expanded="true" signature="12915:13142" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492062289000" expanded="true" signature="12915:13252" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492062289000" expanded="true" signature="12915:13254" ph="SELECT id AS... OnlineAgecy_contractor" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manager_clients.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/manager/manager_clients.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,8 +137,8 @@
       <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="74" />
+            <state relative-caret-position="45">
+              <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -305,7 +296,7 @@
                   <point x="-33.25" y="37.5" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="0.42153589315525875" x="480.34653465346537" y="619.3465346534654" />
+              <settings layout="Hierarchic Group" zoom="0.6229193660373082" x="296.28261133821576" y="669.2826113382157" />
               <SelectedNodes>
                 <node>e6893a34-ca25-47f6-a8b2-a2cdc1c31589.TABLE:main.sqlite_master</node>
               </SelectedNodes>
@@ -317,32 +308,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.OnlineAgecy_contractor" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/2ff5ef9e/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/main.OnlineAgecy_contractor">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="clients_services.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/clients/clients_services.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.OnlineAgecy_client" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/2ff5ef9e/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/main.OnlineAgecy_client">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="clients_list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/clients/clients_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="14" />
               <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -436,16 +417,12 @@
         <option value="$PROJECT_DIR$/templates/bills/bill_detail.html" />
         <option value="$PROJECT_DIR$/templates/clients/new_client.html" />
         <option value="$PROJECT_DIR$/templates/layouts/form.html" />
-        <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/templates/acts/act_list.html" />
         <option value="$PROJECT_DIR$/templates/bills/bills_list.html" />
         <option value="$PROJECT_DIR$/templates/briefs/briefs_list.html" />
-        <option value="$PROJECT_DIR$/templates/contractors/contractors_list.html" />
         <option value="$PROJECT_DIR$/templates/contractors/contractor_detail.html" />
         <option value="$PROJECT_DIR$/templates/manager/manager_detail.html" />
         <option value="$PROJECT_DIR$/templates/clients/clients_documents.html" />
-        <option value="$PROJECT_DIR$/templates/clients/clients_list.html" />
-        <option value="$PROJECT_DIR$/templates/manager/manager_list.html" />
         <option value="$PROJECT_DIR$/templates/clients/allUserContracts.html" />
         <option value="$PROJECT_DIR$/templates/contracts/contract_detail.html" />
         <option value="$PROJECT_DIR$/templates/contracts/contracts_list.html" />
@@ -464,6 +441,10 @@
         <option value="$PROJECT_DIR$/OnlineAgecy/urls.py" />
         <option value="$PROJECT_DIR$/templates/manager/manager_clients.html" />
         <option value="$PROJECT_DIR$/OnlineAgecy/views.py" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/templates/manager/manager_list.html" />
+        <option value="$PROJECT_DIR$/templates/clients/clients_list.html" />
+        <option value="$PROJECT_DIR$/templates/contractors/contractors_list.html" />
       </list>
     </option>
   </component>
@@ -535,7 +516,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
+              <option name="myItemId" value="contractors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -549,11 +530,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clients" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -945,11 +922,11 @@
       <window_info id="manage.py@OBDZ_Project" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.48869145" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.51130855" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23287672" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23287672" sideWeight="0.490625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16882068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232633" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1071,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OBDZ_Project/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1145,26 +1115,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/manager/manager_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/contracts/contracts_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="67" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clients/clients_services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1181,14 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="57" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clients/client_detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1233,14 +1179,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/clients/clients_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/2ff5ef9e/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/main.OnlineAgecy_client">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1251,14 +1189,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/contractors/contractors_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1334,6 +1264,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/manager/manager_clients.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnlineAgecy/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clients/client_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/manager/manager_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1489,7 +1459,7 @@
               <point x="-33.25" y="37.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.42153589315525875" x="480.34653465346537" y="619.3465346534654" />
+          <settings layout="Hierarchic Group" zoom="0.6229193660373082" x="296.28261133821576" y="669.2826113382157" />
           <SelectedNodes>
             <node>e6893a34-ca25-47f6-a8b2-a2cdc1c31589.TABLE:main.sqlite_master</node>
           </SelectedNodes>
@@ -1500,67 +1470,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/console.sql">
+    <entry file="file://$PROJECT_DIR$/templates/clients/clients_services.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="74" />
+        <state relative-caret-position="60">
+          <caret line="4" column="39" lean-forward="false" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/clients/clients_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineAgecy/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="30" column="89" lean-forward="false" selection-start-line="30" selection-start-column="89" selection-end-line="30" selection-end-column="89" />
+        <state relative-caret-position="423">
+          <caret line="48" column="51" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="58" />
           <folding>
             <element signature="e#23#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OnlineAgecy/models.py">
+    <entry file="file://$PROJECT_DIR$/templates/contractors/contractors_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="7" lean-forward="false" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+        <state relative-caret-position="120">
+          <caret line="8" column="67" lean-forward="false" selection-start-line="8" selection-start-column="67" selection-end-line="8" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/manager/manager_clients.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e6893a34-ca25-47f6-a8b2-a2cdc1c31589/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        <state relative-caret-position="45">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineAgecy/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="184" column="17" lean-forward="false" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
+        <state relative-caret-position="3662">
+          <caret line="326" column="15" lean-forward="false" selection-start-line="326" selection-start-column="4" selection-end-line="326" selection-end-column="15" />
           <folding>
             <element signature="e#31#95#0" expanded="true" />
-            <marker date="1492061933000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
-            <marker date="1492061933000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3566" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3683" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3719" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3889" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3931" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3500:3933" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="3702:3719" ph="SELECT contr... " />
-            <marker date="1492061933000" expanded="true" signature="5632:5679" ph="SELECT * FRO... OnlineAgecy_contract" />
-            <marker date="1492061933000" expanded="true" signature="7330:7711" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492061933000" expanded="true" signature="12915:12958" ph="SELECT id AS... OnlineAgecy_contractor" />
-            <marker date="1492061933000" expanded="true" signature="12915:12995" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492061933000" expanded="true" signature="12915:13020" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492061933000" expanded="true" signature="12915:13107" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492061933000" expanded="true" signature="12915:13142" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492061933000" expanded="true" signature="12915:13252" ph="SELECT id AS... OnlineAgecy_contractor" />
-            <marker date="1492061933000" expanded="true" signature="12915:13254" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492062289000" expanded="true" signature="1148:1151" ph="Select * FRO... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="1148:1154" ph="Select * FRO... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492062289000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3566" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3683" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3719" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3889" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3931" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3500:3933" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="3702:3719" ph="SELECT contr... " />
+            <marker date="1492062289000" expanded="true" signature="5632:5679" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492062289000" expanded="true" signature="7330:7711" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492062289000" expanded="true" signature="12915:12958" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492062289000" expanded="true" signature="12915:12995" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492062289000" expanded="true" signature="12915:13020" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492062289000" expanded="true" signature="12915:13107" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492062289000" expanded="true" signature="12915:13142" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492062289000" expanded="true" signature="12915:13252" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492062289000" expanded="true" signature="12915:13254" ph="SELECT id AS... OnlineAgecy_contractor" />
           </folding>
         </state>
       </provider>

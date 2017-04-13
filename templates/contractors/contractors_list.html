@@ -6,8 +6,12 @@
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
         <span><h1> contractors list </h1></span>
-        <span>
-            <a href="{% url 'contractors_new' %}" class="top-menu">
+        <a class="btn btn-default" href="{% url 'newest_contractors' %}">
+             Підрядники, послугами яких ніхто не користується
+        </a>
+
+        <span class="plus col-md-1 col-lg-1">
+            <a href="{% url 'newest_contractors' %}" class="top-menu">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </span>

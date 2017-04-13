@@ -6,7 +6,11 @@
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
         <span><h1> managers list </h1></span>
-        <span>
+        <a class="btn btn-default" href="{% url 'managers_clients_count' %}">
+             Менеджери за кількістю клієнтів
+        </a>
+
+        <span class="plus col-md-1 col-lg-1">
             <a href="{% url 'manager_new' %}" class="top-menu">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>

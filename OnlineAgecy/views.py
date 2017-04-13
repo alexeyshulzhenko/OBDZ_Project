@@ -17,7 +17,7 @@ def home(request):
 @login_required(login_url="login/")
 def clients(request):
 	# get the blog clients that are published
-	clients = Client.objects.all()
+	clients = Client.objects.raw('SELECT * FROM OnlineAgecy_client')
 
 	# now return the rendered template
 	return render(request, "clients/clients_list.html", {'clients': clients})
@@ -89,7 +89,7 @@ def fresh_clients(request):
 @login_required(login_url="login/")
 def contracts(request):
 	# get the blog clients that are published
-	contracts = Contract.objects.all()
+	contracts = Contract.objects.raw('SELECT * FROM OnlineAgecy_contract')
 	# now return the rendered template
 	return render(request, "contracts/contracts_list.html", {'contracts': contracts})
 
@@ -141,7 +141,7 @@ def contracts_by_date(request, Date):
 @login_required(login_url="login/")
 def managers(request):
 	# get the blog clients that are published
-	managers = Manager.objects.all()
+	managers = Manager.objects.raw('SELECT * FROM OnlineAgecy_manager')
 	# now return the rendered template
 	return render(request, "manager/manager_list.html", {'managers': managers})
 
@@ -188,7 +188,7 @@ def managers_clients_count(request):
 @login_required(login_url="login/")
 def brief(request):
 	# get the blog clients that are published
-	briefs = Brief.objects.all()
+	briefs = Brief.objects.raw('SELECT * FROM OnlineAgecy_brief')
 	# now return the rendered template
 	return render(request, "briefs/briefs_list.html", {'briefs': briefs})
 
@@ -232,7 +232,7 @@ def brief_edit(request, id):
 
 @login_required(login_url="login/")
 def services(request):
-    services = Service.objects.all()
+    services = Service.objects.raw('SELECT * FROM OnlineAgecy_service')
 
     return render(request, "services/services_list.html", {'services': services})
 
@@ -288,7 +288,7 @@ def service_all_clients(request, id):
 
 @login_required(login_url="login/")
 def contractors(request):
-    contractors = Contractor.objects.all()
+    contractors = Contractor.objects.raw('SELECT * FROM OnlineAgecy_contractor')
 
     return render(request, "contractors/contractors_list.html", {'contractors': contractors})
 
@@ -337,7 +337,7 @@ def newest_contractors(request):
 
 @login_required(login_url="login/")
 def acts(request):
-    acts = Act.objects.all()
+    acts = Act.objects.raw('SELECT * FROM OnlineAgecy_act')
 
     return render(request, "acts/act_list.html", {'acts': acts})
 
@@ -379,7 +379,7 @@ def act_edit(request, id):
 
 @login_required(login_url="login/")
 def bills(request):
-    bills = Bill.objects.all()
+    bills = Bill.objects.raw('SELECT * FROM OnlineAgecy_bill')
 
     return render(request, "bills/bills_list.html", {'bills': bills})
 

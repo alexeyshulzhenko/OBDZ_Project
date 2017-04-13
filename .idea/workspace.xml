@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e088ecf6-b30b-45c2-997a-070d4530549a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OnlineAgecy/views.py" afterPath="$PROJECT_DIR$/OnlineAgecy/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layouts/base.html" afterPath="$PROJECT_DIR$/templates/layouts/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -279,29 +278,38 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OnlineAgecy/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="81" column="113" lean-forward="true" selection-start-line="81" selection-start-column="113" selection-end-line="81" selection-end-column="113" />
+            <state relative-caret-position="835">
+              <caret line="85" column="63" lean-forward="true" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
               <folding>
                 <element signature="e#31#95#0" expanded="true" />
-                <marker date="1492065399000" expanded="true" signature="1148:1151" ph="Select * FRO... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="1148:1154" ph="Select * FRO... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
-                <marker date="1492065399000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="3500:3576" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="3500:3672" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="3500:3787" ph="SELECT id ,N... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="5486:5533" ph="SELECT * FRO... OnlineAgecy_contract" />
-                <marker date="1492065399000" expanded="true" signature="7184:7565" ph="SELECT Onlin... OnlineAgecy_client" />
-                <marker date="1492065399000" expanded="true" signature="12769:12812" ph="SELECT id AS... OnlineAgecy_contractor" />
-                <marker date="1492065399000" expanded="true" signature="12769:12849" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492065399000" expanded="true" signature="12769:12874" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492065399000" expanded="true" signature="12769:12961" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492065399000" expanded="true" signature="12769:12996" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-                <marker date="1492065399000" expanded="true" signature="12769:13106" ph="SELECT id AS... OnlineAgecy_contractor" />
-                <marker date="1492065399000" expanded="true" signature="12769:13108" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492065798000" expanded="true" signature="550:582" ph="SELECT * FRO... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="1182:1185" ph="Select * FRO... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="1182:1188" ph="Select * FRO... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="1889:1944" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492065798000" expanded="true" signature="2169:2602" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="2169:2713" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="2863:3326" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="2863:3390" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="3534:3610" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="3534:3706" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="3534:3821" ph="SELECT id ,N... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="4172:4206" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492065798000" expanded="true" signature="5556:5603" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492065798000" expanded="true" signature="5971:6004" ph="SELECT * FRO... OnlineAgecy_manager" />
+                <marker date="1492065798000" expanded="true" signature="7289:7670" ph="SELECT Onlin... OnlineAgecy_client" />
+                <marker date="1492065798000" expanded="true" signature="8008:8039" ph="SELECT * FRO... OnlineAgecy_brief" />
+                <marker date="1492065798000" expanded="true" signature="9402:9435" ph="SELECT * FRO... OnlineAgecy_service" />
+                <marker date="1492065798000" expanded="true" signature="11641:11677" ph="SELECT * FRO... OnlineAgecy_contractor" />
+                <marker date="1492065798000" expanded="true" signature="12980:13023" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492065798000" expanded="true" signature="12980:13060" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492065798000" expanded="true" signature="12980:13085" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492065798000" expanded="true" signature="12980:13172" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492065798000" expanded="true" signature="12980:13207" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+                <marker date="1492065798000" expanded="true" signature="12980:13317" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492065798000" expanded="true" signature="12980:13319" ph="SELECT id AS... OnlineAgecy_contractor" />
+                <marker date="1492065798000" expanded="true" signature="13622:13648" ph="SELECT * FRO... OnlineAgecy_contract" />
+                <marker date="1492065798000" expanded="true" signature="13622:13651" ph="SELECT * FRO... OnlineAgecy_act" />
+                <marker date="1492065798000" expanded="true" signature="14915:14945" ph="SELECT * FRO... OnlineAgecy_bill" />
               </folding>
             </state>
           </provider>
@@ -902,8 +910,8 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16882068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232633" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16882068" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24232633" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1490,29 +1498,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OnlineAgecy/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="81" column="113" lean-forward="true" selection-start-line="81" selection-start-column="113" selection-end-line="81" selection-end-column="113" />
+        <state relative-caret-position="835">
+          <caret line="85" column="63" lean-forward="true" selection-start-line="85" selection-start-column="63" selection-end-line="85" selection-end-column="63" />
           <folding>
             <element signature="e#31#95#0" expanded="true" />
-            <marker date="1492065399000" expanded="true" signature="1148:1151" ph="Select * FRO... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="1148:1154" ph="Select * FRO... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="1855:1910" ph="SELECT * FRO... OnlineAgecy_contract" />
-            <marker date="1492065399000" expanded="true" signature="2135:2568" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="2135:2679" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="2829:3292" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="2829:3356" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="3500:3576" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="3500:3672" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="3500:3787" ph="SELECT id ,N... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="5486:5533" ph="SELECT * FRO... OnlineAgecy_contract" />
-            <marker date="1492065399000" expanded="true" signature="7184:7565" ph="SELECT Onlin... OnlineAgecy_client" />
-            <marker date="1492065399000" expanded="true" signature="12769:12812" ph="SELECT id AS... OnlineAgecy_contractor" />
-            <marker date="1492065399000" expanded="true" signature="12769:12849" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492065399000" expanded="true" signature="12769:12874" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492065399000" expanded="true" signature="12769:12961" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492065399000" expanded="true" signature="12769:12996" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
-            <marker date="1492065399000" expanded="true" signature="12769:13106" ph="SELECT id AS... OnlineAgecy_contractor" />
-            <marker date="1492065399000" expanded="true" signature="12769:13108" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492065798000" expanded="true" signature="550:582" ph="SELECT * FRO... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="1182:1185" ph="Select * FRO... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="1182:1188" ph="Select * FRO... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="1889:1944" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492065798000" expanded="true" signature="2169:2602" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="2169:2713" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="2863:3326" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="2863:3390" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="3534:3610" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="3534:3706" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="3534:3821" ph="SELECT id ,N... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="4172:4206" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492065798000" expanded="true" signature="5556:5603" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492065798000" expanded="true" signature="5971:6004" ph="SELECT * FRO... OnlineAgecy_manager" />
+            <marker date="1492065798000" expanded="true" signature="7289:7670" ph="SELECT Onlin... OnlineAgecy_client" />
+            <marker date="1492065798000" expanded="true" signature="8008:8039" ph="SELECT * FRO... OnlineAgecy_brief" />
+            <marker date="1492065798000" expanded="true" signature="9402:9435" ph="SELECT * FRO... OnlineAgecy_service" />
+            <marker date="1492065798000" expanded="true" signature="11641:11677" ph="SELECT * FRO... OnlineAgecy_contractor" />
+            <marker date="1492065798000" expanded="true" signature="12980:13023" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492065798000" expanded="true" signature="12980:13060" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492065798000" expanded="true" signature="12980:13085" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492065798000" expanded="true" signature="12980:13172" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492065798000" expanded="true" signature="12980:13207" ph="SELECT id AS... OnlineAgecy_contractorWHERE" />
+            <marker date="1492065798000" expanded="true" signature="12980:13317" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492065798000" expanded="true" signature="12980:13319" ph="SELECT id AS... OnlineAgecy_contractor" />
+            <marker date="1492065798000" expanded="true" signature="13622:13648" ph="SELECT * FRO... OnlineAgecy_contract" />
+            <marker date="1492065798000" expanded="true" signature="13622:13651" ph="SELECT * FRO... OnlineAgecy_act" />
+            <marker date="1492065798000" expanded="true" signature="14915:14945" ph="SELECT * FRO... OnlineAgecy_bill" />
           </folding>
         </state>
       </provider>

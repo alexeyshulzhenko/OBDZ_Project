@@ -29,32 +29,36 @@
             <p>Меню обліку бріфів рекламних кампаній</p>
         </div>
     </div>
-    <div class="row">
-        <h2>Меню агенції</h2>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'clients' %}">Клієнти</a></h3>
-            <p>Меню обліку клієнтів</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'contractors' %}">Підрядники</a></h3>
-            <p>Меню обліку підрядників</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'managers' %}">Працівники</a></h3>
-            <p>Меню обліку працівників</p>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 fill-height-or-more">
-        <div class="jumbotron">
-            <h3><a href="{% url 'services' %}">Послуги</a></h3>
-            <p>Меню обліку послуг</p>
-        </div>
-    </div>
+    {% for group in user.groups.all %}
+        {% if group.name == 'manager' %}
+            <div class="row">
+                <h2>Меню агенції</h2>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'clients' %}">Клієнти</a></h3>
+                    <p>Меню обліку клієнтів</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'contractors' %}">Підрядники</a></h3>
+                    <p>Меню обліку підрядників</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'managers' %}">Працівники</a></h3>
+                    <p>Меню обліку працівників</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 fill-height-or-more">
+                <div class="jumbotron">
+                    <h3><a href="{% url 'services' %}">Послуги</a></h3>
+                    <p>Меню обліку послуг</p>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
 </div>
 {% endblock %}

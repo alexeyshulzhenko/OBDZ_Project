@@ -43,8 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'OnlineAgecy',
+    'OnlineAgecy.apps.OnlineagecyConfig',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +57,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'OBDZ_Project.urls'
+
+AUTH_USER_MODEL = 'OnlineAgecy.MyUser'
 
 TEMPLATES = [
     {

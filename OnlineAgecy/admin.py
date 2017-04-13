@@ -47,3 +47,11 @@ class BillSource(resources.ModelResource):
 @admin.register(Bill)
 class BillModelAdmin(ImportExportModelAdmin):
     resource_class = BillSource
+
+
+class ContractorSource(resources.ModelResource):
+    class Meta:
+        model = Contractor
+@admin.register(Contractor)
+class ContractorModelAdmin(ImportExportModelAdmin):
+    resource_class = ContractorSource

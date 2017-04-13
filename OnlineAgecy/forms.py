@@ -60,8 +60,11 @@ class ContractForm(forms.ModelForm):
 
 
         self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+
         self.fields["Start_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker2'})
+
         self.fields["End_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
+
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:
@@ -78,6 +81,7 @@ class ManagerForm(forms.ModelForm):
         super(ManagerForm, self).__init__(*args, **kwargs)
 
         self.fields["Birthday_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:
@@ -94,8 +98,11 @@ class BriefForm(forms.ModelForm):
         super(BriefForm, self).__init__(*args, **kwargs)
 
         self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+
         self.fields["Start_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker2'})
+
         self.fields["End_date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
+
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:
@@ -125,7 +132,8 @@ class ActForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ActForm, self).__init__(*args, **kwargs)
 
-        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker3'})
+        self.fields["Date"].widget = forms.DateInput(attrs={'id': 'datetimepicker12'})
+
         for field_name in self.fields:
             field = self.fields.get(field_name)
             if field:

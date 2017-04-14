@@ -47,6 +47,8 @@
 	      <ul class="nav navbar-nav navbar-right">
               {% for group in user.groups.all %}
                 {% if group.name == 'manager' %}
+                  <li><a href="{% url 'contracts_services'  %} ">Послуги по клієнтам</a></li>
+                  <li><a href="{% url 'clients_services_count'  %} ">Послуги клієнтів</a></li>
                   <li><a href="{% url 'client_new'  %} ">Додати клієнта</a></li>
                   <li><a href="{% url 'fresh_clients' %} ">Чорний список</a></li>
                 {% endif %}

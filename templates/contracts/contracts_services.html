@@ -1,0 +1,26 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
+        <h1> Звіт "Клієнти та послуги"</h1>
+    <span>
+        <button onclick="myFunction()" class="print">
+            <span class="glyphicon glyphicon glyphicon-print"></span>
+        </button>
+    </span>
+
+    <script>
+        function myFunction() {
+            window.print();
+        }
+    </script>
+    <table class="col-md-8">
+          {% for Item in items %}
+              <tr>
+                  <td class="col-lg-6 col-md-6">{{ Item.clientName }}</td>
+                  <td class="col-lg-6 col-md-6">{{ Item.service }}</td>
+              </tr>
+          {% endfor %}
+     </table>
+    </div>
+{% endblock %}

@@ -27,10 +27,15 @@
             </div>
             <div class="col-md-6 col-lg-4 fill-height-or-more">
                 <div class="jumbotron">
-                    <h3><a href="{% url 'briefs' %}">Бріфи</a></h3>
+                    <h3><a href="{% url 'all_clients_briefs' id=request.user.id %}">Бріфи</a></h3>
                     <p>Меню обліку бріфів рекламних кампаній</p>
                 </div>
             </div>
+
+
+
+
+
             {% endif %}
     {% endfor %}
     {% for group in user.groups.all %}

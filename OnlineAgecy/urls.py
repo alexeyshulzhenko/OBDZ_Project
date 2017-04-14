@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^contracts/new/$', views.contract_new, name='contract_new'),
     url(r'^contracts/(?P<id>\d+)/edit/$', views.contract_edit, name='contract_edit'),
     url(r'^contracts/list/(?P<id>\d+)/$', views.all_clients_contracts, name='all_clients_contracts'),
-    url(r'^contracts/(?P<Date>\d+)/$', views.contracts_by_date, name='contracts_by_date'),
+    url(r'^contracts/list/$', views.contracts_services, name='contracts_services'),
     url(r'^contracts/del/(?P<id>\d+)/$', views.delete_contract, name='delete_contract'),
 
     url(r'^manager/$', views.managers, name='managers'),
@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^briefs/new/$', views.brief_new, name='brief_new'),
     url(r'^briefs/(?P<id>\d+)/edit/$', views.brief_edit, name='brief_edit'),
     url(r'^briefs/del/(?P<id>\d+)/$', views.delete_brief, name='delete_brief'),
+    url(r'^briefs/list/(?P<id>\d+)/$', views.all_clients_briefs, name='all_clients_briefs'),
 
     url(r'^services/$', views.services, name='services'),
     url(r'^services/(?P<id>\d+)/$', views.service_detail, name='service_detail'),
@@ -60,7 +61,7 @@ urlpatterns = [
 
     url(r'^bills/$', views.bills, name='bills'),
     url(r'^bills/(?P<id>\d+)/$', views.bills_detail, name='bills_detail'),
-    url(r'^bills/new/$', views.bills_new, name='bill_new'),
+    url(r'^bills/new/$', views.bills_new, name='bills_new'),
     url(r'^bills/(?P<id>\d+)/edit/$', views.bills_edit, name='bills_edit'),
     url(r'^bill/del/(?P<id>\d+)/$', views.delete_bill, name='delete_bill'),
 ]

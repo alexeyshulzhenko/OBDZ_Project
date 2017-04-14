@@ -1,7 +1,7 @@
 {% extends 'layouts/base.html' %}
 
 
-{% block title %} Всі бріфи клієнта {% endblock %}
+{% block title %} Всі договори клієнта {% endblock %}
 
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
@@ -16,9 +16,9 @@
                 window.print();
             }
         </script>
-        <h1> Всі бріфи клієнта </h1><a href="{% url 'brief_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <h1> Всі рахунки клієнта </h1><a href="{% url 'bills_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         {% for item in items %}
-            <h2><a href="{%  url 'brief_detail' item.id %}">Бріф No:{{item.id}}</a> від {{ item.Date }}</h2>
+            <h2><a href="{%  url 'bills_detail' item.id %}">Рахунок No:{{item.id}}</a> від {{ item.Date }}</h2>
             <p>Manager: {{item.Manager_id}}</p>
         {% endfor %}
     </div>

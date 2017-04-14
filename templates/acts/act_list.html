@@ -7,12 +7,9 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
         <span><h1> acts list </h1></span><span><a href="{% url 'act_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></span>
         {% for act in acts %}
-             <div class="act">
-                 <div class="Name">
-                    <h3><a href="{%  url 'act_detail' act.id %}">{{act.Name}}</a></h3>
-                 </div>
-                 <p>{{ act.Payment_info }}</p>
-            </div>
+            <h2><a href="{%  url 'act_detail' act.id %}"> bill No:{{act.id}}</a> </h2>
+            <p>From: {{act.Date}}</p><br>
+            <p>Made by Brief No: {{act.Manager_id}}</p>
         {% endfor %}
     </div>
 {% endblock %}

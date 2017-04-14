@@ -396,7 +396,6 @@ service_id</ColNames>
     <column id="103" parent="11" name="client_id_id">
       <Position>11</Position>
       <DataType>integer|0</DataType>
-      <NotNull>1</NotNull>
     </column>
     <index id="104" parent="11" name="sqlite_autoindex_OnlineAgecy_myuser_1">
       <ColNames>username</ColNames>

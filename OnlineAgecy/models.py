@@ -71,7 +71,7 @@ class Contract(models.Model):
     Client_id = models.ForeignKey(Client)
     Services = models.ManyToManyField(Service)
     def __str__(self):
-        return str(self.id + self.Client_id)
+        return str(self.id)
 
 
 class Act(models.Model):

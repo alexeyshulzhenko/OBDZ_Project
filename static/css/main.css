@@ -17,3 +17,7 @@
     background-color:#FFFFFF;
     border: none;
 }
+
+.print > @page {
+  margin: 0;
+}

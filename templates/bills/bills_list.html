@@ -5,12 +5,11 @@
 
 {% block content %}
     <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2">
-        <h1> All bills </h1><span class="glyphicon glyphicon-plus"></span></a>
+        <h1> All bills </h1><span><a href="{% url 'bills_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a> </span>
         {% for bill in bills %}
-            <h2><a href="{%  url 'bill_detail' bill.id %}"> bill No:{{bill.id}}</a> </h2>
-            <p>Client: {{bill.Client_id}}</p><br>
-            <p>Made by Brief No: {{bill.Brief_id}}</p>
-            <p>For services: {{bill.Brief_id}}</p>
+            <h2><a href="{%  url 'bills_detail' bill.id %}"> bill No:{{bill.id}}</a> </h2>
+            <p>From: {{bill.Date}}</p><br>
+            <p>Made by Brief No: {{bill.Manager_id}}</p>
         {% endfor %}
-    </div>
+   </div>
 {% endblock %}

@@ -125,7 +125,6 @@ class ContractorForm(forms.ModelForm):
                 })
 
 class ActForm(forms.ModelForm):
-
     class Meta:
         model = Act
         fields = ('Contract_id', 'Date', 'Manager_id')

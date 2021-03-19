@@ -17,7 +17,7 @@ django-import-export==0.5.1
 django-static-precompiler==1.5
 django-staticfiles==1.2.1
 django-tastypie==0.13.3
-djangorestframework==3.5.1
+djangorestframework==3.11.2
 djangorestframework-filters==0.9.1
 djangorestframework-queryfields==1.0.0
 dropbox==2.2.0
